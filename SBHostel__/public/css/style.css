@@ -1,0 +1,579 @@
+ /* ============ GOOGEL FONTS ================= */
+ /*
+  * ─── TITLE FONT */ @import url('https://fonts.googleapis.com/css2?family=Tourney:wght@600&display=swap');
+ /* font-family: 'Tourney', cursive; */
+ /*
+  * ─── BODY TEXT */@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+/* font-family: 'Otomanopee One', sans-serif; */
+/*
+ * ─── CONTACT TEXT ──*/@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+ 
+ /* font-family: 'Yellowtail', cursive; */
+ 
+/* ============ VARIABLES ==========  */
+:root{
+    /* HEIGTH FOR EACH SECTIONS */
+    --h-h:4.5rem;
+/* ======== COLORS ========= */
+--f-c:#f5a91e;
+--s-c:whitesmoke;
+--tt-c:#00f3ff;
+--su-tt:#fff;
+--t-c:#000000;
+--t-c-l:#c3b590;
+--h-c:#00ada6,#125e97;
+--h-c-l:#0b5882,#5aabc4;
+--btn:linear-gradient(var(--h-c));
+
+    /* ========== FONT ========== */
+    --bf:3.25rem;
+    --h1:3.5rem;
+    --h2:3rem;
+    --h3:2.5rem;
+    --nf:2rem;
+    --smf:1.5rem;
+    --fwh:400;
+    --fwl:400;
+
+    /* =========== MARGIN ========= */
+    --mr1:1rem;
+    --mr2:2rem;
+    --mr3:3rem;
+
+    /* ============ z-index =========== */
+    --zil:10;
+    --zih:100;
+}
+
+
+
+/* ============= BASE ============ */
+*,::before,::after{
+    box-sizing:bordor-box;
+}
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Concert One', cursive;
+    margin:var(--h-h) 0 0 0;
+    font-size:var(--nf);
+    line-height:calc(var(--h-h) + 10%);
+    color:var(--t-c);
+    background: var(--s-c);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+h1,h2,h3,p,ul{
+    margin:0;
+}
+ul{
+    padding:0;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+
+/* =========== CSS CLASSES ==== */
+.section{
+    padding:5rem 0 3rem;
+}
+.section-title,.section-subtitle{
+    font-family: 'Tourney', cursive;
+    text-transform:uppercase;
+    text-align:center;
+}
+.section-title{
+    font-size:var(--h2);
+    color:var(--tt-c);
+    margin-bottom: var(--mr3);
+}
+.section-subtitle{
+    font-size:var(--nf);
+    display:block;
+    color:var(--f-c);
+    font-weight: 200;
+    margin-bottom: var(--mr1);
+}
+.section-desc{
+    color:var(--t-c-l);
+    text-align:center;
+    text-transform:capitalize;
+}
+.button{
+    background:var(--btn);
+    text-transform: uppercase;
+    border: none;
+    padding:1rem 2rem 2.5rem 2.5rem;
+    border-radius:0 5rem;
+    color:#fff;
+    font-size: var(--h3);
+    box-shadow: 0 10px 10px 1px rgba(0,0,0,0.5);
+    transition: .5s;
+}
+.button:hover{
+    background:linear-gradient(var(--h-c-l));
+    color:var(--tt-c);
+}
+
+/* ========= REVEAL ANIMATION ============ */
+.home_contant,.home_img,.about_contant,.about_img,.services,.rooms,.book_contant,.book_img,.contact_contant,.contact_button,.footer_contant{
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all .8s ease;
+}
+.showReveal{
+    opacity:1;
+    transform: translateY(0);
+
+}
+
+/* ============= TOP SCROLL ========== */
+.scrolltop{
+    position: fixed;
+    bottom:-10rem;
+    right:2rem;
+    display:flex;
+    font-size: var(--bf);
+    border-radius: 50%;
+    align-items: center;
+    padding:2rem;
+    background:linear-gradient(var(--h-c-l));
+    color:white;
+    z-index: var(--zih);
+    transition: all .4s ease;
+    visibility: hidden;
+}
+.scrolltop:hover{
+    background:linear-gradient(var(--h-c));
+    color:var(--f-c);
+
+}
+.scroll-top{
+   visibility:visible;
+   bottom:1.5rem;
+ }
+/* ======= LAYOUT =========== */
+.container{
+    max-width:960px;
+    width:calc(100% - 3rem);
+    margin:0 var(--mr1);
+}
+.grid{
+    display:grid;
+    gap:5rem;
+}
+.header{
+    position:relative;
+    margin-top:-4.5rem;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100vh;
+    z-index: var(--zih);
+    background:linear-gradient(180deg,rgba(18, 94, 151,.7),rgba(0, 173, 166,.7)),url(../assets/images/header_img.jpg);
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    clip-path: polygon(0% 0%,100% 0%,100% 75%,0% 100%);
+}
+
+ /* ============ NAV ======== */
+  .nav_bar{
+     max-width:1024px;
+     height: var(--h-h);
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+ }
+
+ /* ======== LOGO VIDEO & TEXT ========= */
+ .nav_logo{
+     display:flex;
+     justify-content:space-between;
+     align-items:center;
+     max-width:100px;
+     width:100%;
+ }
+    .logo_text1 a{
+        padding:.5rem;
+        color:var(--su-tt);
+        text-transform:uppercase;
+        font-weight:400;
+    }
+    .logo_line{
+        height:40px;
+        border-radius:1rem;
+        width:5px;
+        background:linear-gradient(180deg,var(--su-tt),var(--tt-c));
+    }
+    .logo_text2{
+        padding:.5rem;
+        color:var(--tt-c);
+    }
+
+ @media only screen and (max-width:768px){
+     .html{
+         font-size: 30%;
+     }
+     .menu{
+         position:fixed;
+         top:-100%;
+         left:0;
+         width:100%;
+         padding:2.5rem 0 2rem;
+         text-align:center;
+         border-radius:0 0 1.5rem 1.5rem;
+         transition: .5s;
+         z-index: var(--zih);
+         box-shadow:0 9px 10px 1px rgba(0,0,0,0.5);
+         background: linear-gradient(0deg,var(--h-c));
+     }
+     .button{
+         font-size: var(--nf);
+     }
+ }
+ .menu_items{
+     margin-bottom: var(--mr2);
+    }
+    .menu_link,.nav_toggle{
+        text-transform: uppercase;
+        color:var(--su-tt);
+        cursor:pointer;
+        transition:.4s;
+    }
+    .menu_link:hover{
+    text-decoration: underline;
+    color:var(--tt-c);
+}
+
+/* ========= TOGGLING CLASS ======== */
+.show_menu{
+    top:var(--h-h);
+}
+
+/* ========== ADDING SHADOW FOR SCROLL HERDER */
+/* .scroll_header{
+    box-shadow:0 4px 4px 9px rgba(0,0,0,0.5);
+} */
+
+/* ======== HEADER HOME ======= */
+.home_container{
+    text-transform: uppercase;
+    gap:5rem;
+    height:calc(100vh - var(--h-h));
+    align-content: center;
+}
+.home_title{
+    font-size: var(--bf);
+    color:var(--su-tt);
+    margin-bottom: var(--mr1);
+ font-family: 'Tourney', cursive;
+
+}
+.home_subtitle{
+    font-size: var(--h3);
+    color:var(--tt-c);
+    margin-bottom: var(--mr3);
+ font-family: 'Tourney', cursive;
+}
+.home_img{
+    width:500px;
+    filter:drop-shadow(1rem 2rem 1rem rgba(0,0,0,0.5));
+    justify-self: center;
+}
+
+ /* ============ ABOUT ============ */
+.about_contant{
+   text-align:center;
+}
+.about_desc{
+    margin-bottom:var(--mr3);
+}
+.about_img{
+    width:350px;
+    border-radius:2rem;
+    justify-self: center;
+}
+
+/* =============== SERVICES ========== */
+.services_container{
+    row-gap:4.5rem;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+}
+.services_content{
+    text-align:center;
+}
+.services_img{
+    width:200px;
+    border-radius:1rem;
+    margin-bottom: var(--mr2);
+}
+.services-title{
+    font-size:var(--h2);
+    text-transform: capitalize;
+    color:var(--t-c);
+    margin-bottom: var(--mr1);
+}
+.services-desc{
+    text-transform: capitalize;
+    padding:0 2.5rem;
+}
+
+/* =========== ROOMS ========== */
+
+.rooms_container{
+    grid-template-columns:repeat(1,400px);
+    justify-content: center;
+}
+.rooms_contant{
+    position:relative;
+    display:none;
+    text-align:center;
+    flex-direction:column;
+    background: #fbfcff;
+    border-radius:0 0 10rem 10rem;
+    box-shadow:0px 10px 2rem rgba(3,74,40,.25);
+    padding:2rem;
+    transition: .5s;
+}
+
+/* =========== CERASUL CSS ============ */
+.showslides_img{
+    border-radius:0 0 5rem 5rem;
+    width:250px;
+    filter:drop-shadow(1px 1.5rem 1rem rgba(0,0,0,0.9));
+      border: .5rem double #000;
+
+}
+  .active_img{
+      border: .5rem solid #000;
+    opacity: .5;
+  }
+  .img_controlar{
+      margin-top: 3rem;
+      position:relative;
+      display: flex;
+    cursor: pointer;
+    width: auto;
+    user-select: none;
+    transition: .3s;
+    z-index: 10;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    margin:-15px 3rem;
+    color:var(--t-c);
+    z-index: 10;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius:1rem 0 0 1rem;
+    user-select: none;
+    transition: .3s;
+    -webkit-user-select: none;
+  }
+    .next {
+        right: 0;
+        border-radius: 0 1rem 1rem 0;
+      }
+      
+      .prev:hover,
+      .next:hover {
+          color:var(--tt-c);
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .img_tap {
+          position: relative;
+          max-width:100%;
+    filter:drop-shadow(0 1rem 1rem rgba(0,0,0,0.25));
+          background:linear-gradient(180deg,whitesmoke,white);
+          border-radius:0 0 10rem 10rem;
+      display: flex;
+      margin-top: 6rem;
+      justify-self: center;
+      align-self: center;
+      transition: .5s;
+      } 
+      .img_colunm{
+          padding:1rem;
+      }
+      #gallery_img{
+          border-radius:1.5rem;
+      }
+     
+      /* =============== GOOGLE MAP =============== */
+       .googleMap_container{
+    grid-template-columns:repeat(1,1fr);
+    justify-content: center;
+}
+.googleMap_contant{
+    display:flex;
+    justify-self: center;
+    text-align:center;
+    flex-direction:column;
+    width:100%;
+    height: 700px;
+    transition: .5s;
+} 
+.map_img{
+    width:100%;
+    height:100%;
+}
+      
+/* =========== BOOKING ======== */
+.book_contant{
+    text-align:center;
+}
+.book_desc{
+    margin-bottom: var(--mr3);
+    color:var(--t-c-l);
+    text-transform: capitalize;
+}
+.book_img{
+    width:250px;
+    justify-self: center;
+    filter:drop-shadow(1rem 1rem 1rem rgba(0,0,0,0.25));
+}
+
+/* =========== CONTACT US ======== */
+.contact_container{
+    text-align:center;
+}
+.contact_desc{
+    margin-bottom:var(--mr3);
+}
+
+/* ============= FOOTER =========== */
+.footer_container{
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    row-gap:2rem;
+}
+.footer_logo{
+    font-size:var(--h3);
+    color:var(--f-c);
+    font-weight:500;
+    transition: .3s;
+}
+.footer_desc{
+    color:var(--t-c-l);
+    display:block;
+    text-transform: uppercase;
+    font-size:var(--nf);
+    margin:.25rem 0 var(--mr2);
+}
+.footer_social{
+    font-size: 2.5rem;
+    color:var(--t-c);
+    margin-right: var(--mr3);
+    transition:.4s;
+}
+.footer_social:hover{
+    color:var(--tt-c);
+}
+.footer_title{
+    text-transform: uppercase;
+    font-size:var(--h2);
+    color:var(--t-c);
+    margin-bottom: var(--mr2);
+}
+.footer_links{
+    text-transform: capitalize;
+    display:inline-block;
+    color:var(--t-c);
+    margin-bottom: var(--mr1);
+    transition: .3s;
+}
+.footer_links:hover,.footer_logo:hover{
+    color:var(--tt-c);
+    text-decoration: underline;
+}
+.footer_copy{
+    text-align:center;
+    text-transform: capitalize;
+    font-size:var(--nf);
+    color:var(--t-c-l);
+    margin-top: 3.5rem;
+}
+
+/* =========== MEDIA QUERY ============ */
+@media only screen and (min-width:576px){
+    html{
+        font-size: 55.5%;
+    }
+    .home_container,.about_container,.book_container{
+        grid-template-columns:repeat(2,1fr);
+        align-items:center;
+    }
+    .about_contant,.about_initial,.book_contant,.book_initial,.contact_contant,.contact_initial{
+        text-align:initial;
+    }
+    .book_img,.about_img{
+        width:390px;
+        order:-1;
+    }
+    .contact_contant{
+        grid-template-columns: 1.7fr 1fr;
+        align-items: center;
+    }
+    .contact_button{
+        justify-self: center;
+    }
+     .img_colunm{
+          padding:4rem;
+      }
+    @media only screen and (min-width:760px){
+        body{
+            margin:0;
+        }
+            .home_container{
+    height:calc(70vh - var(--h-h));
+        }
+        .section{
+            padding-top:11rem;
+        }
+        .nav_bar{
+            height: calc(var(--h-h) + 10rem);
+        }
+        .menu{
+            display:flex;
+        }
+        .menu_items{
+            margin:0 0 0 calc(var(--mr3) + 5rem);
+        }
+        .nav_toggle{
+            display:none;
+        }
+      .services_container,.rooms_container{
+          margin-top:var(--mr3);
+      }
+      .rooms_contact{
+          padding:1.5rem;
+      }
+    }
+    @media only screen and (min-width:960px){
+         html{
+        font-size: 64.5%;
+    }
+        .container{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .home_container{
+    height:calc(80vh - var(--h-h));
+        }
+       .about_container,.book_container{
+           column-gap: 10rem;
+       }
+    }
+}
