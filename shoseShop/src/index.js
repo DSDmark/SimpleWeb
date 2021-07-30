@@ -9,7 +9,7 @@ const path = require(
 
 // ────────────────────────────────────────────────────────────────────────────────
 const app = express();
-const port = process.env.PORT || 3000; // WHEN YOU HOSTING WEBSITE PORT
+const port = process.env.PORT || 8000; // WHEN YOU HOSTING WEBSITE PORT
 const staticPath = path.join(__dirname, '../public/');  // INDEX.HTML FILE PATH HERE
 
 // ────────────────────────────────────────────────────────────────────────────────

@@ -9,7 +9,7 @@ const path = require(
 );
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const staticPath = path.join(__dirname,"../public/");
 console.log(staticPath)
 
