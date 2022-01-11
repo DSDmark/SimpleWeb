@@ -1,0 +1,94 @@
+[
+  {
+    "about": {
+      "title": "about me",
+      "subtitle": "about me",
+      "img": {
+        "url": "image/sanskar.png",
+        "alt": "DSmark image"
+      },
+      "decs": " Those who rejoice in youth deceive themselves and those around them,accepting in full the circumstances that devour them.In the face of the word \"youth,\",they will twist any common interpretation or accepted notion out of recognition.In their minds, lies, secrets, sins, and failure are nothing more than the spice of youth.If failure is truly the proof of one's youth... Then is there not something abnormal about But I am sure none of them would admit to this.It is all a double standard. My conclusion is this All you fools who delight in youth... is "
+    },
+    "category": ["skills", "education", "exprences"],
+    "skills": [
+      {
+        "title": "html",
+        "progress": "80%"
+      },
+      {
+        "title": "css",
+        "progress": "90%"
+      },
+      {
+        "title": "javascript",
+        "progress": "60%"
+      },
+      {
+        "title": "nodejs",
+        "progress": "50%"
+      },
+      {
+        "title": "jQuery",
+        "progress": "40%"
+      },
+      {
+        "title": "boostarp",
+        "progress": "70%"
+      },
+      {
+        "title": "tailwine",
+        "progress": "50%"
+      },
+      {
+        "title": "react",
+        "progress": "70%"
+      },
+      {
+        "title": "react(nextjs)",
+        "progress": "60%"
+      },
+      {
+        "title": "mongodb",
+        "progress": "65%"
+      },
+      {
+        "title": "sql",
+        "progress": "75%"
+      }
+    ],
+    "expriances": [
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      },
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      },
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      }
+    ],
+    "education": [
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      },
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      },
+      {
+        "title": "sep, 2016 - oct. 2017",
+        "subtitle": "web designer",
+        "decs": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit adipisci, laboriosam dolor aliquid asperiores maxime accusantium pariatur? Similique molestias maxime perspiciatis sunt? Suscipit hic dolor modi, id laborum officia. Delectus harum cupiditate ipsam nostrum vitae quis, incidunt itaque, sequi ut ipsa odit! Deserunt sapiente quod doloribus accusantium tempore fuga cum debitis voluptas cupiditate veritatis, amet nesciunt totam ratione vel optio esse corrupti vero. Aspernatur, esse. Blanditiis debitis, vel quae eos temporibus a porro iure impedit consequatur autem error expedita commodi sit perferendis rem nesciunt quas deserunt architecto repellat. Quas iure laudantium molestias dolorem rerum cupiditate accusamus laboriosam molestiae dolorum?"
+      }
+    ]
+  }
+]

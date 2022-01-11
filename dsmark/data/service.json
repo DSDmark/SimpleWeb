@@ -1,0 +1,34 @@
+[
+  {
+    "service": {
+      "title": "services",
+      "subtitle": "what you want ▼o・ェ・o▼"
+    },
+    "services": [
+      {
+        "title": "web design",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      },
+      {
+        "title": "fullstack development",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      },
+      {
+        "title": "app development",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      },
+      {
+        "title": "deploying & hosting things",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      },
+      {
+        "title": "micro services things",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      },
+      {
+        "title": "tech & support",
+        "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
+      }
+    ]
+  }
+]

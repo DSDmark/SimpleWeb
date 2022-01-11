@@ -1,0 +1,214 @@
+/* ============= GOOGLE FONTS =========== */
+/*
+*TITLE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap");
+//  font-family: 'Moo Lah Lah', cursive;
+/*
+ *BODY FONT */
+@import url("https://fonts.googleapis.com/css2?family=Norican&display=swap");
+// font-family: 'Norican', cursive;
+/*
+ *CONTACT TEXT */
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+/* font-family: 'Yellowtail', cursive; */
+
+/* ============ VARIABLES =======  */
+$font1: "Moo Lah Lah", cursive;
+$font2: "Norican", cursive;
+$font3: "Yellowtail", cursive;
+$font4: "Yellowtail", cursive;
+$outerShadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+$outerShadow-0: 0 0 0 #d0d0d0, inset -3px -3px 3px #f8f8f8;
+$innerShadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
+
+// * COLORS
+$main_color: (
+  "pC": #496fe3bf,
+  "sC": #3b6059,
+  "tC": #f98fff,
+  "fC": #f9c05e9e,
+  "title": #533652e0,
+  "subtitle": #399abfb5,
+  "decs": #969696f0,
+  "body": #896fe833,
+);
+
+// * FONTS
+$fonts: (
+  "bodyF": $font1,
+  "titleF": $font2,
+  "subtitleF": $font3,
+  "decs": $font4,
+  "bigF": 3.25rem,
+  "normalF": 2rem,
+  "smallerF": 1.5rem,
+  "fontW_h": 400,
+  "fontW_l": 200,
+);
+
+// * MArGINS
+$margins: (
+  "line-height": 4.5rem,
+  // ? line height
+  "mr_1": 1rem,
+  "mr_2": 2rem,
+  "mr_3": 3rem,
+);
+
+// * Z-INDEX
+$z_index: (
+  "tool_fixed": 100,
+  "tool_normal": 10,
+);
+
+// * COMMANS PROPATIES
+@mixin transitionPro {
+  transition: all 0.5s ease;
+}
+@mixin flexPro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ============ BASE ==========
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  user-select: none;
+  font-family: map-get($fonts, bodyF);
+  overflow-x: hidden;
+  font-size: map-get($fonts, normalF);
+  margin: map-get($margins, mr_1) 0;
+  font-weight: map-get($fonts, fontW_l);
+  line-height: map-get($margins, line-height);
+  color: map-get($main_color, sC);
+  text-transform: capitalize;
+  background: map-get($main_color, body);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+b {
+  color: map-get($main_color, tC);
+  font-family: $font4;
+  text-shadow: $outerShadow;
+}
+
+// =========== CSS CLASSESS ===========
+.section {
+  padding: 5rem 0 3rem;
+}
+
+.title,
+.subtitle {
+  text-transform: uppercase;
+  text-align: center;
+}
+.title {
+  font-family: map-get($fonts, titleF);
+  font-size: map-get($fonts, bigF);
+  color: map-get($main_color, title);
+}
+.subtitle {
+  font-size: map-get($fonts, normalF);
+
+  font-family: map-get($fonts, subtitleF);
+  color: map-get($main_color, subtitle);
+}
+.decs {
+  font-size: map-get($fonts, smallerF) + 1rem;
+  text-align: center;
+  color: map-get($main_color, decs);
+  font-family: map-get($fonts, decs);
+  text-transform: capitalize;
+}
+
+.button {
+  text-transform: uppercase;
+  border: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  color: map-get($main_color, title);
+  font-size: map-get($fonts, normalF) + 0.5rem;
+  box-shadow: $outerShadow;
+  @include transitionPro;
+
+  &:hover {
+    color: map-get($main_color, pC);
+    box-shadow: $innerShadow;
+  }
+}
+
+// ============ SHADOWS =============
+.outer-shadow {
+  box-shadow: $outerShadow;
+}
+.hover-in-shadow {
+  position: relative;
+  z-index: map-get($z_index, tool-normal);
+
+  &:hover {
+    box-shadow: $outerShadow-0;
+    color: map-get($main_color, pC);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include transitionPro;
+  }
+  &:hover::after {
+    box-shadow: $innerShadow;
+    border-radius: 5rem;
+  }
+}
+
+// ======= LAYOUT =========
+.container {
+  margin: auto;
+  max-width: 1600px;
+  width: calc(100% - 3rem);
+}
+
+.grid {
+  display: grid;
+  gap: 5rem;
+}
+
+// ============ ========
