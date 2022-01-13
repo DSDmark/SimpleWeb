@@ -29,7 +29,6 @@ const Header = () => {
             </Link>
           </div>
         </div>
-
         <nav className="nav_bar grid" style={state ? { right: "100%" } : {}}>
           <div
             onClick={() => setstate(!state)}

@@ -179,7 +179,7 @@ const home = () => {
           <div className="home_details">
             <h2 className="subtitle">
               <Typical
-                steps={["≧◉ᴥ◉≦ 👋!,", 6000, "hello !,", 7000]}
+                steps={["≧◉ᴥ◉≦ 😅 !,", 6000, "hello 😈 !,", 7000]}
                 loop={Infinity}
                 wrapper="p"
               />

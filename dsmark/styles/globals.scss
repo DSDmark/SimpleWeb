@@ -5,18 +5,25 @@
 //  font-family: 'Moo Lah Lah', cursive;
 /*
  *BODY FONT */
-@import url("https://fonts.googleapis.com/css2?family=Norican&display=swap");
-// font-family: 'Norican', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+// font-family: 'Berkshire Swash', cursive;
 /*
  *CONTACT TEXT */
-@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
-/* font-family: 'Yellowtail', cursive; */
+
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+// font-family: 'Fugaz One', cursive;
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+// font-family: 'Abril Fatface', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+//font-family: 'Sacramento', cursive;
 
 /* ============ VARIABLES =======  */
-$font1: "Moo Lah Lah", cursive;
-$font2: "Norican", cursive;
-$font3: "Yellowtail", cursive;
-$font4: "Yellowtail", cursive;
+$font1: "Berkshire Swash", cursive;
+$font2: "Sacramento", cursive;
+$font3: "Moo Lah Lah", cursive;
+$font4: "Abril Fatface", cursive;
+$font5: "Fugaz One", cursive;
 $outerShadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
 $outerShadow-0: 0 0 0 #d0d0d0, inset -3px -3px 3px #f8f8f8;
 $innerShadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
@@ -35,10 +42,11 @@ $main_color: (
 
 // * FONTS
 $fonts: (
-  "bodyF": $font1,
-  "titleF": $font2,
+  "bodyF": $font4,
+  "titleF": $font1,
   "subtitleF": $font3,
-  "decs": $font4,
+  "decs": $font5,
+  "spical": $font2,
   "bigF": 3.25rem,
   "normalF": 2rem,
   "smallerF": 1.5rem,
@@ -89,7 +97,7 @@ html {
 
 body {
   user-select: none;
-  font-family: map-get($fonts, bodyF);
+  font-family: $font4;
   overflow-x: hidden;
   font-size: map-get($fonts, normalF);
   margin: map-get($margins, mr_1) 0;
@@ -122,7 +130,7 @@ a {
 }
 b {
   color: map-get($main_color, tC);
-  font-family: $font4;
+  font-family: map-get($fonts, spical);
   text-shadow: $outerShadow;
 }
 
@@ -143,7 +151,6 @@ b {
 }
 .subtitle {
   font-size: map-get($fonts, normalF);
-
   font-family: map-get($fonts, subtitleF);
   color: map-get($main_color, subtitle);
 }
@@ -165,6 +172,7 @@ b {
   font-size: map-get($fonts, normalF) + 0.5rem;
   box-shadow: $outerShadow;
   @include transitionPro;
+  font-family: map-get($fonts, bodyF);
 
   &:hover {
     color: map-get($main_color, pC);

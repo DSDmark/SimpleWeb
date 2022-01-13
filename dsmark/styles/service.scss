@@ -1,0 +1,46 @@
+.service-section {
+  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: map-get($margins, mr_2);
+
+  & .text-area {
+    justify-content: center;
+    align-self: center;
+    grid-column: 1/-1;
+  }
+
+  .service-details {
+    align-self: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 5rem;
+    box-shadow: $outerShadow;
+    line-height: map-get($margins, line-height) - 1rem;
+    text-align: center;
+
+    & span {
+      @include flexPro;
+      margin-bottom: map-get($margins, mr_3);
+      align-self: center;
+      justify-self: center;
+      font-size: map-get($fonts, bigF);
+      text-align: center;
+
+      & i {
+        @include flexPro;
+        border-radius: 50%;
+        padding: 2rem;
+        box-shadow: $innerShadow;
+        @include transitionPro;
+      }
+    }
+    &:hover span i {
+      box-shadow: $outerShadow;
+      color: map-get($main_color, pC);
+    }
+    & h1,
+    p {
+      font-size: map-get($fonts, smallerF);
+    }
+  }
+}

@@ -5,8 +5,8 @@ const index = () => {
     <>
       <Header />
       <Home />
-      <Service />
       <About />
+      <Service />
     </>
   );
 };

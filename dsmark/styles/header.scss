@@ -84,6 +84,7 @@
   left: -100px;
   font-size: map-get($fonts, smallerf) - 10px;
   top: 50%;
+  font-family: map-get($fonts, bodyF);
   color: map-get($main_color, sC);
   font-weight: map-get($fonts, fontW_h);
   transform: translateY(-50%) rotate(90deg);

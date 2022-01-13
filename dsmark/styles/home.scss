@@ -7,6 +7,7 @@
 }
 .home_details {
   padding: 0.5rem;
+  justify-self: center;
   & h1,
   h2,
   p {
@@ -14,40 +15,40 @@
     text-align: start;
     z-index: 10;
   }
-  & h1{
-    font-size: map-get($fonts,bigF) + 1rem;
+  & h1 {
+    font-size: map-get($fonts, bigF) + 1rem;
   }
-  & button{
-    padding: 0 3rem ;
+  & button {
+    padding: 0 3rem;
   }
 }
-.home_img{
-    padding:1.5rem;
-    box-shadow: $innerShadow;
-    @include flexPro;
-    justify-self: center;
-    align-items: center;
-    border-radius: 50%;
+.home_img {
+  padding: 1.5rem;
+  box-shadow: $innerShadow;
+  @include flexPro;
+  justify-self: center;
+  align-items: center;
+  border-radius: 50%;
 
-    & img{
+  & img {
     border-radius: 50%;
-        box-shadow: $outerShadow;
-    }
+    box-shadow: $outerShadow;
+  }
 }
 // ============ EFFECTS ============
-.effect-wrap .effect{
+.effect-wrap .effect {
   position: absolute;
   z-index: -1;
 }
-.squre{
+.squre {
   width: 40px;
   height: 40px;
-  right:10%;
-  bottom:10%;
-  border: 4px solid map-get($main_color,pC);
+  right: 10%;
+  bottom: 10%;
+  border: 4px solid map-get($main_color, pC);
   animation: squre 10s forwards infinite;
 }
-.squre::before{
+.squre::before {
   content: "";
   border-radius: 50%;
   background: #000;
@@ -55,143 +56,143 @@
   height: 7px;
   position: absolute;
   left: -10px;
-  top:-30px;
+  top: -30px;
   animation: squre 10s forwards infinite;
 }
-.dots{
+.dots {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 40px;
   bottom: 17%;
-  left:10%;
+  left: 10%;
   animation: dots 10s forwards infinite;
 }
-.dots div{
+.dots div {
   background: black;
   width: 2px;
   border-radius: 50%;
   height: 2px;
   margin: 1px;
 }
-.circle{
+.circle {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 25px solid map-get($main_color,fC);
-  top:-90px;
+  border: 25px solid map-get($main_color, fC);
+  top: -90px;
   left: 10%;
   animation: circle 10s linear infinite;
 }
 
-.triangle{
-  border-top:30px solid transparent;
-  border-left: 30px solid map-get($main_color,sC);
-  left:30%;
-  top:40%;
-  animation:triangle 10s forwards infinite;
+.triangle {
+  border-top: 30px solid transparent;
+  border-left: 30px solid map-get($main_color, sC);
+  left: 30%;
+  top: 40%;
+  animation: triangle 10s forwards infinite;
 }
-.triangle::before{
+.triangle::before {
   content: "";
-   border-top:30px solid transparent;
-  border-left: 30px solid map-get($main_color,sC);
+  border-top: 30px solid transparent;
+  border-left: 30px solid map-get($main_color, sC);
   position: absolute;
   left: -35px;
-  top:-25px;
-  opacity:.5;
+  top: -25px;
+  opacity: 0.5;
   animation: triangle2 10s forwards infinite;
 }
-.lines{
+.lines {
   display: flex;
   flex-wrap: wrap;
   width: 90px;
   top: 17%;
-  right:10%;
+  right: 10%;
   overflow: hidden;
   border-radius: 50%;
   animation: lines 10s forwards infinite;
 }
-.lines::before{
+.lines::before {
   content: "";
   border-radius: 50%;
-  background: map-get($main_color,title);
+  background: map-get($main_color, title);
   width: 7px;
   height: 7px;
   position: absolute;
   left: 53%;
-  top:50%;
+  top: 50%;
   animation: squre 10s forwards infinite;
 }
-.lines div{
-  background: map-get($main_color,tC);
+.lines div {
+  background: map-get($main_color, tC);
   width: 1px;
   height: 60px;
-  margin:1px;
+  margin: 1px;
 }
 // ======== ANIMATIONS ========
 @keyframes squre {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  50%{
+  50% {
     transform: rotate(360deg);
   }
-  100%{
+  100% {
     transform: rotate(0deg);
   }
-};
+}
 @keyframes dots {
-  0%{
+  0% {
     transform: translateY(0);
   }
-  50%{
+  50% {
     transform: translateY(100px);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
-};
+}
 @keyframes circle {
-  0%{
+  0% {
     transform: translateX(0);
   }
-  50%{
+  50% {
     transform: translateX(65vw);
   }
-  100%{
+  100% {
     transform: translateX(0);
   }
-};
+}
 @keyframes triangle {
-  0%{
-    transform: translate(0) rotate(360deg); 
-  }
-  50%{
-    transform: translate(62vw,10vh) rotate(0);
-  }
-  100%{
+  0% {
     transform: translate(0) rotate(360deg);
   }
-};
+  50% {
+    transform: translate(62vw, 10vh) rotate(0);
+  }
+  100% {
+    transform: translate(0) rotate(360deg);
+  }
+}
 @keyframes triangle2 {
-  0%{
-    transform: translate(0) rotate(360deg); 
-  }
-  50%{
-    transform: translate(20px,200px) rotate(0);
-  }
-  100%{
+  0% {
     transform: translate(0) rotate(360deg);
   }
-};
+  50% {
+    transform: translate(20px, 200px) rotate(0);
+  }
+  100% {
+    transform: translate(0) rotate(360deg);
+  }
+}
 @keyframes lines {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  50%{
+  50% {
     transform: rotate(360deg);
   }
-  100%{
+  100% {
     transform: rotate(0deg);
   }
-};
+} ;
