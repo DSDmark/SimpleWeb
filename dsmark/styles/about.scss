@@ -70,6 +70,7 @@
   align-items: flex-start;
 
   & p {
+    display: flex;
     font-size: map-get($fonts, smallerF) + 0.5rem;
   }
 

@@ -7,26 +7,32 @@
     "services": [
       {
         "title": "web design",
+        "icons": "FaFigma",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       },
       {
         "title": "fullstack development",
+        "icons": "FaDev",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       },
       {
         "title": "app development",
+        "icons": "FaAndroid",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       },
       {
         "title": "deploying & hosting things",
+        "icons": "FaAws",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       },
       {
         "title": "micro services things",
+        "icons": "FaCogs",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       },
       {
         "title": "tech & support",
+        "icons": "FaUserAstronaut",
         "decs": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus consequatur magnam cum obcaecati facilis debitis fugiat aspernatur soluta dolores mollitia."
       }
     ]

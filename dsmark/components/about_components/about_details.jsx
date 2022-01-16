@@ -1,5 +1,12 @@
 import React from "react";
 import { AiFillBook, AiFillTool } from "react-icons/ai";
+import * as FontAwesome from "react-icons/fa";
+
+const Icon = (props) => {
+  const { iconName, size } = props;
+  const icon = React.createElement(FontAwesome[iconName]);
+  return <div style={{ fontSize: size }}>{icon}</div>;
+};
 
 const about_details = ({
   skills,
@@ -33,6 +40,7 @@ function Detail({ skills, education, expriances, category, activeLink }) {
           return (
             <div className="skills-tap" key={i}>
               <p className="title">{e.title}</p>
+              <Icon iconName={e.icons} size="3rem" />
               <div className="progress-bar">
                 <p className="decs">{e.progress}</p>
                 <div

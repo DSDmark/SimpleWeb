@@ -1,25 +1,31 @@
 /* ============= GOOGLE FONTS =========== */
 /*
-*TITLE FONT */
+*SUBTITLE FONT */
 @import url("https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap");
 //  font-family: 'Moo Lah Lah', cursive;
-/*
- *BODY FONT */
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-// font-family: 'Berkshire Swash', cursive;
-/*
- *CONTACT TEXT */
 
+/*
+ *TITLE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+// font-family: 'Rye', cursive;
+
+/*
+ * DECS FONT */
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 // font-family: 'Fugaz One', cursive;
 
+/*
+* BODY FONT */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 // font-family: 'Abril Fatface', cursive;
+
+/*
+ * USE FOR SOME SPICAL TEXT */
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 //font-family: 'Sacramento', cursive;
 
 /* ============ VARIABLES =======  */
-$font1: "Berkshire Swash", cursive;
+$font1: "Rye", cursive;
 $font2: "Sacramento", cursive;
 $font3: "Moo Lah Lah", cursive;
 $font4: "Abril Fatface", cursive;
@@ -73,6 +79,7 @@ $z_index: (
 @mixin transitionPro {
   transition: all 0.5s ease;
 }
+
 @mixin flexPro {
   display: flex;
   justify-content: center;
@@ -80,6 +87,7 @@ $z_index: (
 }
 
 // ============ BASE ==========
+
 *,
 ::before,
 ::after {
@@ -116,7 +124,8 @@ img {
 h1,
 h2,
 h3,
-h4 {
+h4,
+span {
   margin: 0;
 }
 

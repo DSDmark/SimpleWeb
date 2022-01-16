@@ -1,0 +1,40 @@
+.contant-section {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.detail-area {
+  @include flexPro;
+
+  & div {
+    @include flexPro;
+    flex: 1;
+    margin: map-get($margins, mr_1);
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    font-size: 4rem;
+    align-items: center;
+    flex-direction: column;
+    & span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: map-get($fonts, bigF) - 0.5rem;
+      padding: 1rem;
+      box-shadow: $innerShadow;
+      margin-bottom: map-get($margins, mr_2);
+    }
+
+    &:hover span {
+      box-shadow: $outerShadow;
+      color: map-get($main_color, pC);
+    }
+
+    & h1,
+    h2 {
+      font-size: map-get($fonts, normalF);
+    }
+  }
+}

@@ -1,5 +1,12 @@
+import React from "react";
 import { Service_data } from "../data";
-import { GrServices } from "react-icons/gr";
+import * as FontAwesome from "react-icons/fa";
+
+const Icon = (props) => {
+  const { iconName } = props;
+  const icon = React.createElement(FontAwesome[iconName]);
+  return <div>{icon}</div>;
+};
 
 const service = () => {
   return (
@@ -16,7 +23,7 @@ const service = () => {
                 <div className="service-details" key={index}>
                   <span>
                     <i>
-                      <GrServices />
+                      <Icon iconName={element.icons} />
                     </i>
                   </span>
                   <h1 className="title">{element.title}</h1>

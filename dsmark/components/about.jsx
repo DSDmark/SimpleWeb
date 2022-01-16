@@ -4,7 +4,6 @@ import { AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import { SiFiverr } from "react-icons/si";
 import { BsStackOverflow, BsDiscord } from "react-icons/bs";
 import { About_data } from "../data";
-
 import About_details from "./about_components/about_details";
 
 const about = () => {
