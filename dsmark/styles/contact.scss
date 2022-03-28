@@ -25,6 +25,7 @@
       padding: 1rem;
       box-shadow: $innerShadow;
       margin-bottom: map-get($margins, mr_2);
+      @include transitionPro;
     }
 
     &:hover span {
@@ -35,6 +36,45 @@
     & h1,
     h2 {
       font-size: map-get($fonts, normalF);
+      text-transform: lowercase;
     }
+  }
+}
+.massage-area {
+  display: grid;
+  grid-auto-columns: 100px;
+  & input,
+  textarea {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: $outerShadow;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include transitionPro;
+
+    &:hover {
+      box-shadow: $innerShadow;
+      border-radius: 5rem;
+    }
+    &:focus {
+      box-shadow: $innerShadow;
+      outline: none;
+      border: 0;
+    }
+  }
+
+  & textarea {
+    height: 100%;
+    width: 100%;
+    padding: 5.5rem;
+  }
+  & .textarea-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
   }
 }

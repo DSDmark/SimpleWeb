@@ -116,7 +116,8 @@ body {
   background: map-get($main_color, body);
 }
 
-img {
+img,
+Image {
   max-width: 100%;
   height: auto;
 }
@@ -186,6 +187,7 @@ b {
   &:hover {
     color: map-get($main_color, pC);
     box-shadow: $innerShadow;
+    background: none;
   }
 }
 

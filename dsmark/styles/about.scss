@@ -29,7 +29,8 @@
     box-shadow: $innerShadow;
     padding: 1.5rem;
 
-    & img {
+    & .shadow {
+      display: flex;
       padding: 0.5rem;
       box-shadow: $outerShadow;
     }
@@ -47,6 +48,7 @@
     @include flexPro;
     border-radius: 50%;
     padding: 0.6rem;
+    @include transitionPro;
   }
 }
 

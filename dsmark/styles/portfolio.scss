@@ -1,0 +1,29 @@
+.portfolio-section {
+  @include flexPro;
+  flex-direction: column;
+}
+
+.portfolio-contant {
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: space-around;
+  align-items: center;
+  & .portfolio-details {
+    @include flexPro;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: $outerShadow;
+    padding: 1rem;
+    border-radius: 1.5rem;
+
+    & .title {
+      text-align: start;
+    }
+  }
+}
+
+.portfolio_img {
+  width: 250px;
+  border-radius: 1.5rem;
+}

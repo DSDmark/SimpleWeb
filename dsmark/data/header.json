@@ -1,0 +1,10 @@
+[
+  {
+    "logoText": ["DS"],
+    "nevbar": {
+      "newCategorys": ["home", "contact", "about", "protfolio", "testimonial"],
+      "copyrightText": ["2022 resivce by"],
+      "copyrightMono": ["DSmark"]
+    }
+  }
+]

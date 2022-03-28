@@ -1,4 +1,11 @@
-import { Header, Home, About, Service, Contact } from "../components";
+import {
+  Header,
+  Home,
+  About,
+  Service,
+  Portfolio,
+  Contact,
+} from "../components";
 
 const index = () => {
   return (
@@ -7,6 +14,7 @@ const index = () => {
       <Home />
       <About />
       <Service />
+      <Portfolio />
       <Contact />
     </>
   );
