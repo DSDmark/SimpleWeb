@@ -14,14 +14,13 @@ import {
 import axios from 'axios'
 
 export default function Cards({ hostname }: any) {
- const [repoData, setData] = useState<any>([])
- console.log(hostname)
+ const [repoData, setData] = useState<any>(null)
+
  const callApis = async () => {
   try {
    const url = `https://api.github.com/users/${hostname}/repos`
    const {data} = await axios.get(url)
    setData(data)
-   console.log(repoData)
   } catch (err) {
    console.log(err)
   }
@@ -29,15 +28,18 @@ export default function Cards({ hostname }: any) {
 
  useEffect(() => {
   if (hostname) {
+    setTimeout(()=>{
    callApis()
+    },9000)
   }
- }, [])
+ }, [hostname])
 
  return (
   <Box sx={{ pt: 8, pb: 6 }}>
    <Container sx={{ textAlign: 'center' }}>
     <Grid container spacing={4}>
-     {repoData.map((e, i) => (
+     {!repoData?<h1>Data is loading...</h1>:
+       repoData.map((e:any, i:number) => (
       <Grid item xs={12} md={6} key={i}>
        <Card
         sx={{
