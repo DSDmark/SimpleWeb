@@ -53,9 +53,9 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 <div align="left">
 
-## Try Out TodoList Demo 🚀
+## Try Out SimpleWeb Demo 🚀
 
-<a href="https://dsdmark.github.io/TodoList/" alt="TodoList Demo">TodoList Demo</a>
+<a href="https://dsdmark.github.io/SimpleWeb/" alt="SimpleWeb">SimpleWeb</a>
 
 </div>
 
