@@ -32,7 +32,8 @@ export default function Home({ name, bio, profile, repos, img }: props) {
         }}>
         <Avatar alt={name} src={img} sx={{ width: 100, height: 100 }} />
         <Typography
-          variant={isLargeScreen ? 'h1' : 'h2'}
+          variant={isLargeScreen ? 'h3' : 'h2'}
+          sx={{ fontWeight: "bold", marginTop: "10px" }}
           textTransform="uppercase">
           {name}
         </Typography>
@@ -51,7 +52,7 @@ export default function Home({ name, bio, profile, repos, img }: props) {
           </Button>
           <Button variant="contained">
             <Link underline="none" color="inherit" href={repos}>
-              repositary
+              repository
             </Link>
           </Button>
         </Stack>
