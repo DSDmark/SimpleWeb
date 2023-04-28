@@ -22,6 +22,13 @@ const createAppTheme = (preferredTheme: any) => {
           }
         }
       },
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            fontWeight: 600,
+          }
+        }
+      },
       MuiSkeleton: {
         styleOverrides: {
           root: {

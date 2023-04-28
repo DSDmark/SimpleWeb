@@ -49,10 +49,13 @@ export const repoSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getData.fulfilled, (state, action) => {
-      return { ...state, userInfo: action.payload }
+      return { ...state, userInfo: action.payload, isLoading: true }
     }),
       builder.addCase(getData.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = false;
+      }),
+      builder.addCase(getData.rejected, (state) => {
+        state.isLoading = false;
       })
   }
 })

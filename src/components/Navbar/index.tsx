@@ -20,6 +20,7 @@ const Navbar = () => {
     dispatch(setTheme(themeMode));
   }, [dispatch, themeMode]);
 
+  console.log()
 
   return (
     <>

@@ -1,7 +1,6 @@
-import { Home, Navbar, MainLayout } from "./components/"
-import Footer from "./components/Footer"
+import { Home, Navbar, MainLayout, Footer } from "./components/"
 import { Provider } from "react-redux"
-import { store } from "./state"
+import { store } from "./state";
 
 function App() {
 
