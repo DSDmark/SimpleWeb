@@ -1,6 +1,19 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
-import axios from 'axios'
-import { NavBar, Home, Cards, Footer } from './components'
+import { Home, Navbar, MainLayout, Footer } from "./components/"
+import { Provider } from "react-redux"
+import { store } from "./state";
+
+
+function App() {
+
+  return (
+    <>
+      <Provider store={store} >
+        <MainLayout>
+          <Navbar />
+          <Home />
+          <Footer />
+        </MainLayout>
+      </Provider>
 
 type User = {
   name: string
@@ -61,7 +74,9 @@ export default function App() {
             <Cards hostname={gitData.login} />
           </main>
           <Footer hostname={gitData.login} />
-        </>}
+        </
     </>
   )
 }
+
+export default App
