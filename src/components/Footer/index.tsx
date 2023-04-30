@@ -2,10 +2,12 @@ import { FC, ReactElement } from "react"
 import { Box, Stack, List, ListItemText, ListItem, Grid, Link as MuiLink, Skeleton, Typography, styled, Avatar, ListItemButton, Container } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "@/state";
+import Copyright from "./copyright";
+import { blueGrey } from "@mui/material/colors";
 
 const FooterImgText = styled(Typography)(({ theme }) => ({
   position: "absolute",
-  color: theme.palette.secondary.main,
+  color: blueGrey[300],
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
@@ -25,7 +27,7 @@ const FooterImgText = styled(Typography)(({ theme }) => ({
 
 const MuiImg = styled("img")({
   width: "100%",
-  height: "500px",
+  height: "400px",
 })
 
 const Footer: FC = (): ReactElement => {
@@ -44,8 +46,8 @@ const Footer: FC = (): ReactElement => {
             </FooterImgText>
           </Box>
         </Grid>
-        <Grid container item xs={12} bgcolor="secondary.dark" justifyContent="center">
-          <Container>
+        <Container>
+          <Grid container item xs={12} justifyContent="center">
             <Grid item xs={12} md={6} >
               <Box >
                 <Stack spacing={1} p={2}>
@@ -57,10 +59,10 @@ const Footer: FC = (): ReactElement => {
                     {` Copyright ${new Date().getFullYear()} by ${login}. All Rights Reserved.`}
                   </Typography>
                   <Typography variant="subtitle1" >
-                    <MuiLink>
+                    <MuiLink color="text.primary">
                       Terms
                     </MuiLink>
-                    <MuiLink ml={2}>
+                    <MuiLink ml={2} color="text.primary">
                       Privacy
                     </MuiLink>
                   </Typography>
@@ -122,9 +124,10 @@ const Footer: FC = (): ReactElement => {
                 </List>
               </Stack>
             </Grid>
-          </Container>
-        </Grid>
+          </Grid>
+        </Container>
       </Grid>
+      <Copyright />
     </Box >
   );
 };
