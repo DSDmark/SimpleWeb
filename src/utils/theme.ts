@@ -1,5 +1,5 @@
-import { createTheme, Theme } from "@mui/material/styles";
-import { alpha } from "@mui/material/styles";
+import { alpha, createTheme, Theme } from "@mui/material/styles";
+import { grey, blueGrey } from "@mui/material/colors";
 
 const shades = {
   primary: {
@@ -9,6 +9,38 @@ const shades = {
   secondary: {
     100: "#e9e9e9",
     200: "#c4c4c4",
+  }
+}
+
+const darkModeTheme = {
+  primary: {
+    main: grey[900],
+  },
+  secondary: {
+    main: grey[900],
+  },
+  background: {
+    default: grey[800],
+  },
+  text: {
+    primary: grey[100],
+    secondary: blueGrey[100]
+  },
+}
+
+const lightModeTheme = {
+  primary: {
+    main: grey[100],
+  },
+  secondary: {
+    main: blueGrey[100],
+  },
+  background: {
+    default: blueGrey[50],
+  },
+  text: {
+    primary: grey[900],
+    secondary: blueGrey[800],
   }
 }
 
@@ -34,6 +66,9 @@ const createAppTheme = (preferredTheme: any) => {
           root: {
             filter: "blur(1px)",
             background: alpha(shades.secondary[200], 0.5),
+            width: "auto",
+            margin: " 0 .5rem",
+            height: "inherit",
           }
         }
       },
@@ -47,7 +82,7 @@ const createAppTheme = (preferredTheme: any) => {
       MuiButton: {
         styleOverrides: {
           root: {
-            color: shades.primary[200],
+            color: grey[200],
             background: shades.secondary[200],
           }
         }
@@ -64,14 +99,7 @@ const createAppTheme = (preferredTheme: any) => {
     },
     palette: {
       mode: preferredTheme,
-      primary: {
-        main: shades.primary[100],
-        light: shades.primary[200],
-      },
-      secondary: {
-        main: shades.secondary[100],
-        dark: shades.secondary[200],
-      },
+      ...(preferredTheme === "dark" ? darkModeTheme : lightModeTheme),
     },
   })
   return theme;

@@ -24,7 +24,7 @@ const initialState: IRepoState = {
     twitter_username: null,
     url: "",
   }, isLoading: false,
-  preferredTheme: "light",
+  preferredTheme: "dark",
 }
 
 // fetching user data
