@@ -96,6 +96,13 @@ const createAppTheme = (preferredTheme: any) => {
           }
         }
       },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            textDecoration: "none",
+          }
+        }
+      }
     },
     palette: {
       mode: preferredTheme,
