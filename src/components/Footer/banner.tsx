@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid, Skeleton, Typography, styled } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import bannerImg from "/public/footer-hero.webp";
+import bannerImg from "/footer-hero.webp";
 
 interface IData {
   data: {

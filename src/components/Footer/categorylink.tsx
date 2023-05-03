@@ -1,18 +1,14 @@
+import { RootState } from "@/state";
 import { Stack, Link as MuiLink, List, ListItemText, ListItem } from "@mui/material";
-
-// const data = {
-//   product: ["shop", "mirch"],
-//   company: ["jobs", "careear"],
-//   social: ["facebook", "github"],
-// }
+import { useSelector } from "react-redux";
 
 const Categorylink = () => {
   return (
-    <Stack direction="row" alignItems="flex-start" justifyContent="space-around">
+    <Stack direction="row" justifyContent="space-around">
       <List>
         <ListItem >
           <ListItemText>
-            products
+            followers
           </ListItemText>
         </ListItem>
         <ListItem >

@@ -11,11 +11,13 @@ interface IData {
     name: string;
     login: string;
     avatar_url: string;
+    followers: number;
+    following: number;
   }
 }
 
 const FooterLogo: FC<IData> = ({ data }) => {
-  const { name, login, avatar_url } = data;
+  const { name, login, avatar_url, following, followers } = data;
   return (
     <Container>
       <Grid container direction="row">
@@ -24,6 +26,9 @@ const FooterLogo: FC<IData> = ({ data }) => {
             <Avatar srcSet={avatar_url} sx={{ height: "80px", width: "80px" }} />
             <Typography>
               {name} ({login})
+            </Typography>
+            <Typography variant="subtitle2" color="secondary.dark">
+              followers {followers} | following {following}
             </Typography>
             <Typography variant="subtitle1">
               {` Copyright ${new Date().getFullYear()} by ${login}. All Rights Reserved.`}
@@ -47,11 +52,11 @@ const FooterLogo: FC<IData> = ({ data }) => {
 }
 
 const Footer: FC = (): ReactElement => {
-  const { userInfo: { name, bio, login, avatar_url }, isLoading } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { name, bio, login, avatar_url, followers, following }, isLoading } = useSelector((state: RootState) => state.repo);
   return (
     <Box>
       <Banner data={{ bio, isLoading }} />
-      <FooterLogo data={{ name, login, avatar_url }} />
+      <FooterLogo data={{ name, login, avatar_url, following, followers }} />
       <Copyright />
     </Box >
   );
