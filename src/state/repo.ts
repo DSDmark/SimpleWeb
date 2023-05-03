@@ -10,7 +10,6 @@ const initialState: IRepoState = {
     bio: "",
     blog: "",
     company: "",
-    email: null,
     followers: 0,
     followers_url: "",
     following: 0,
@@ -29,12 +28,21 @@ const initialState: IRepoState = {
 
 // fetching user data
 export const getData = createAsyncThunk("getData", async (username?: string) => {
-  if (username) {
-    const res: AxiosResponse = await RepoServices.getUserInfo(username)
-    return res.data;
-  }
-  else {
-    const res: AxiosResponse = await RepoServices.getUserInfo();
+  try {
+
+    if (username) {
+      const res: AxiosResponse = await RepoServices.getUserInfo(username)
+      return res.data;
+    }
+    else {
+      let username = "DSDmark";
+      const res: AxiosResponse = await RepoServices.getUserInfo(username);
+      return res.data;
+    }
+  } catch (err) {
+    console.log(err)
+    let username = "DSDmark";
+    const res: AxiosResponse = await RepoServices.getUserInfo(username);
     return res.data;
   }
 })

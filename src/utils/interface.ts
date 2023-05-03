@@ -7,7 +7,6 @@ export interface IUser {
   bio: string;
   blog: string;
   company: string;
-  email: string | null;
   followers: number;
   followers_url: string;
   following: number;

@@ -1,26 +1,20 @@
 import { Skeleton, AppBar, Grid, Box, Toolbar, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setTheme, getData } from "@/state/repo"
+import { setTheme } from "@/state/repo"
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import TsunamiIcon from '@mui/icons-material/Tsunami';
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { RootState, AppDispatch } from "@/state";
 
 const Navbar = () => {
   const [themeMode, setMode] = useState("dark");
   const dispatch: AppDispatch = useDispatch();
-  const { isLoading, userInfo: { name, login, location, avatar_url } } = useSelector((state: RootState) => state.repo)
-
-  useEffect(() => {
-    dispatch(getData());
-  }, [dispatch])
+  const { isLoading, userInfo: { name, login, location, avatar_url }, preferredTheme } = useSelector((state: RootState) => state.repo)
 
   const handleThemeDispatch = useCallback(() => {
     setMode(prev => prev === "dark" ? "light" : "dark");
     dispatch(setTheme(themeMode));
   }, [dispatch, themeMode]);
-
-  console.log()
 
   return (
     <>
@@ -46,7 +40,7 @@ const Navbar = () => {
             </Grid>
             <Grid item ml="auto">
               <Box onClick={handleThemeDispatch} display="flex" alignItems="center" justifyContent="space-between">
-                {themeMode === "light" ? <Brightness7Icon /> : <TsunamiIcon />}
+                {preferredTheme === "light" ? <Brightness7Icon /> : <TsunamiIcon />}
               </Box>
             </Grid>
           </Grid>
