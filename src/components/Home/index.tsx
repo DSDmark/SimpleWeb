@@ -1,7 +1,10 @@
+import TabMenu from "../Header/TabsMenu"
 
 const Home = () => {
   return (
-    <div>home</div>
+    <>
+      <TabMenu />
+    </>
   )
 }
 
