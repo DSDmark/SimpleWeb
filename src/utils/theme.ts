@@ -1,5 +1,6 @@
 import { alpha, createTheme, Theme } from "@mui/material/styles";
 import { grey, blueGrey } from "@mui/material/colors";
+import { PaletteMode } from "@mui/material";
 
 const shades = {
   primary: {
@@ -23,8 +24,8 @@ const darkModeTheme = {
     default: grey[800],
   },
   text: {
-    primary: grey[100],
-    secondary: blueGrey[100]
+    primary: grey[200],
+    secondary: blueGrey[200]
   },
 }
 
@@ -39,12 +40,12 @@ const lightModeTheme = {
     default: blueGrey[50],
   },
   text: {
-    primary: grey[900],
-    secondary: blueGrey[800],
+    primary: grey[700],
+    secondary: blueGrey[700],
   }
 }
 
-const createAppTheme = (preferredTheme: any) => {
+const createAppTheme = (preferredTheme: PaletteMode) => {
   const theme: Theme = createTheme({
     components: {
       MuiCssBaseline: {

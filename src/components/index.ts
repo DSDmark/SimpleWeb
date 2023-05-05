@@ -1,4 +1,3 @@
-export { default as MainLayout } from "./Layout/"
-export { default as Header } from "./Header"
-export { default as Home } from "./Home"
-export { default as Footer } from "./Footer"
+export { default as MainLayout } from "./layout/"
+export { default as Header } from "./header"
+export { default as Footer } from "./footer"

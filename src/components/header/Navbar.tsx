@@ -28,10 +28,10 @@ const Navbar = () => {
             </Grid>
             <Grid item>
               {isLoading ? <>
-                <Typography color="inherit" noWrap>
+                <Typography color="text.primary" noWrap>
                   {name} ({login})
                 </Typography>
-                <Typography color="inherit" noWrap>
+                <Typography color="text.primary" noWrap>
                   {location}
                 </Typography>
               </> :
