@@ -1,25 +1,26 @@
 import { useState } from 'react';
-import { Box, Tabs, Tab } from '@mui/material/';
+import { Link as RouterLink } from "react-router-dom";
+import { Box, Tabs, Tab, Divider } from '@mui/material/';
+
 
 interface LinkTabProps {
-  label?: string;
-  href?: string;
+  label: string;
+  to: string;
 }
 
 function LinkTab(props: LinkTabProps) {
   return (
     <Tab
-      component="a"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
+      LinkComponent={RouterLink}
       {...props}
+      key={window.crypto.randomUUID()}
     />
   );
 }
 
 export default function TabMune() {
   const [value, setValue] = useState<number>(0);
+  const category: string[] = ["home", "followers", "following"]
 
   //@ts-ignore
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -29,10 +30,11 @@ export default function TabMune() {
   return (
     <Box sx={{ width: '100%', m: "1em 0", }}>
       <Tabs value={value} onChange={handleChange} indicatorColor="secondary" textColor="secondary" centered aria-label="nav tabs">
-        <LinkTab label="Page One" href="/drafts" />
-        <LinkTab label="Page Two" href="/trash" />
-        <LinkTab label="Page Three" href="/spam" />
+        {category.map((item) => (
+          <LinkTab label={item} to={`/${item}`} />
+        ))}
       </Tabs>
+      <Divider />
     </Box>
   );
 }
