@@ -7,6 +7,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
   color: theme.palette.text.secondary,
   display: "flex",
   justifyContent: "center",
+  textAlign: "center",
   alignItems: "center",
   width: "100%",
   padding: theme.spacing(2),
