@@ -21,8 +21,8 @@ const FooterLogo: FC<IData> = ({ data }) => {
   return (
     <Container>
       <Grid container direction="row">
-        <Grid item md={6} >
-          <Stack spacing={1} p={2}>
+        <Grid item sx={{ xs: { justifyContent: "center" } }} md={6} >
+          <Stack spacing={1} display="flex" justifyContent="center" alignItems="center" p={2}>
             <Avatar srcSet={avatar_url} sx={{ height: "80px", width: "80px" }} />
             <Typography>
               {name} ({login})
@@ -30,7 +30,7 @@ const FooterLogo: FC<IData> = ({ data }) => {
             <Typography variant="subtitle2" color="secondary.dark">
               followers {followers} | following {following}
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle1" textAlign="center">
               {` Copyright ${new Date().getFullYear()} by ${login}. All Rights Reserved.`}
             </Typography>
             <Typography variant="subtitle1" >
@@ -43,7 +43,7 @@ const FooterLogo: FC<IData> = ({ data }) => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={12} md={6}>
           <Categorylink />
         </Grid>
       </Grid >
