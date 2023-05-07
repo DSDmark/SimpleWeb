@@ -8,7 +8,7 @@ import {
   DialogContent,
   Box,
 } from "@mui/material";
-import { getData } from "@/state/repo";
+import { getUser } from "@/state/repo";
 import { AppDispatch } from "@/state";
 import { GitHub } from "@mui/icons-material";
 import { useState, ChangeEvent } from "react";
@@ -24,7 +24,7 @@ const GetUserName = () => {
 
   const handleClose = () => {
     setOpen(false);
-    dispatch(getData(userInput));
+    dispatch(getUser(userInput));
   };
 
   return (

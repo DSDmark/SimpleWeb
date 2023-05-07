@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { AxiosResponse } from "axios"
+import { PaletteMode } from "@mui/material";
 
 export interface IUser {
   name: string;
@@ -21,6 +22,21 @@ export interface IUser {
   url: string;
 }
 
+export interface IRepo {
+  owner: { avatar_url: string };
+  topics: string[];
+  language: string;
+  url: string;
+  downloads_url: string;
+  forks_count: number;
+  html_url: string;
+  id: number;
+  name: string;
+  description: string;
+  open_issues_count: number;
+  stargazers_count: number;
+}
+
 export interface INavbar {
   name: string;
   location: string;
@@ -38,7 +54,8 @@ export interface ISavei {
 export interface IRepoState {
   userInfo: IUser,
   isLoading: boolean,
-  preferredTheme: string,
+  preferredTheme: PaletteMode,
+  repoInfo: IRepo[],
   // email: string,
   // avatar: string,
   // github: string,

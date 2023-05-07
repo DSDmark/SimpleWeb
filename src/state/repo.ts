@@ -22,12 +22,14 @@ const initialState: IRepoState = {
     starred_url: "",
     twitter_username: null,
     url: "",
-  }, isLoading: false,
+  },
+  repoInfo: [],
+  isLoading: false,
   preferredTheme: "dark",
 }
 
 // fetching user data
-export const getData = createAsyncThunk("getData", async (username?: string) => {
+export const getUser = createAsyncThunk("getUser", async (username?: string) => {
   try {
 
     if (username) {
@@ -47,6 +49,26 @@ export const getData = createAsyncThunk("getData", async (username?: string) => 
   }
 })
 
+// fetching repo data
+export const getRepo = createAsyncThunk("getRepo", async (username?: string) => {
+  try {
+    if (username) {
+      const res: AxiosResponse = await RepoServices.getRepo(username)
+      return res.data;
+    }
+    else {
+      let username = "DSDmark";
+      const res: AxiosResponse = await RepoServices.getRepo(username);
+      return res.data;
+    }
+  } catch (err) {
+    console.log(err)
+    let username = "DSDmark";
+    const res: AxiosResponse = await RepoServices.getRepo(username);
+    return res.data;
+  }
+})
+
 export const repoSlice = createSlice({
   name: "repo",
   initialState,
@@ -56,13 +78,22 @@ export const repoSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(getData.fulfilled, (state, action) => {
+    builder.addCase(getUser.fulfilled, (state, action) => {
       return { ...state, userInfo: action.payload, isLoading: true }
     }),
-      builder.addCase(getData.pending, (state) => {
+      builder.addCase(getUser.pending, (state) => {
         state.isLoading = false;
       }),
-      builder.addCase(getData.rejected, (state) => {
+      builder.addCase(getUser.rejected, (state) => {
+        state.isLoading = false;
+      }),
+      builder.addCase(getRepo.fulfilled, (state, action) => {
+        return { ...state, repoInfo: action.payload, isLoading: true }
+      }),
+      builder.addCase(getRepo.pending, (state) => {
+        state.isLoading = false;
+      }),
+      builder.addCase(getRepo.rejected, (state) => {
         state.isLoading = false;
       })
   }
