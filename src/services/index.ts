@@ -6,8 +6,8 @@ class RepoServices implements IRepoServices {
   getUserInfo(username: string) {
     return http.get(BASE_URL + username);
   }
-  get(username: string) {
-    return http.get(BASE_URL + username + "/followers?per_page=3")
+  getRepo(username: string) {
+    return http.get(BASE_URL + username + "/repos?type=owner&sort=stars&direction=asc&per_page=10")
   }
   getFollowers(username: string) {
     return http.get(BASE_URL + username + "/followers?per_page=3")

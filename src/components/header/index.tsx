@@ -1,11 +1,12 @@
 import Navbar from "./Navbar"
-import TabMune from "./TabsMenu"
+import TabMenu from "./TabsMenu"
+import data from "@/data/header"
 
 const Header = () => {
   return (
     <>
       <Navbar />
-      <TabMune />
+      <TabMenu data={data.nav_categories} />
     </>
   )
 }

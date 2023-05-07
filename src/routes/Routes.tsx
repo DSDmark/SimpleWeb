@@ -1,6 +1,6 @@
 import { Route, BrowserRouter, Routes } from "react-router-dom"
 import { Header, Footer } from "@/components"
-import { Following, Followers, Home, NotFound } from "@/pages"
+import { Following, Followers, Repo, Home, NotFound } from "@/pages"
 
 const RoutesLayout = () => {
   return (
@@ -9,6 +9,7 @@ const RoutesLayout = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/repo" element={<Repo />} />
         <Route path="/followers" element={<Followers />} />
         <Route path="/following" element={<Following />} />
         <Route path="*" element={<NotFound />} />
