@@ -35,6 +35,7 @@ export interface IRepo {
   description: string;
   open_issues_count: number;
   stargazers_count: number;
+  default_branch: string;
 }
 
 export interface INavbar {

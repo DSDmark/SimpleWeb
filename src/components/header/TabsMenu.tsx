@@ -30,15 +30,17 @@ export default function TabMenu({ data }: IData) {
   };
 
   return (
-    <Box sx={{ width: '100%', m: "1em 0", }}>
-      <Tabs value={value} onChange={handleChange} indicatorColor="secondary" textColor="secondary" centered aria-label="nav tabs">
-        {data.map((item: string) => (
-          <LinkTab key={window.crypto.randomUUID()}
-            label={item} to={`/${item}`} />
-        ))}
-      </Tabs>
+    <>
+      <Box sx={{ width: '100%', m: "1em 0", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Tabs variant="scrollable" value={value} onChange={handleChange} indicatorColor="secondary" textColor="secondary" aria-label="nav tabs">
+          {data.map((item: string) => (
+            <LinkTab key={window.crypto.randomUUID()}
+              label={item} to={`/${item}`} />
+          ))}
+        </Tabs>
+      </Box>
       <Divider />
-    </Box>
+    </>
   );
 }
 
