@@ -38,6 +38,12 @@ export interface IRepo {
   default_branch: string;
 }
 
+export interface IPagination {
+  currentPage: number;
+  itemsPerPage: number;
+}
+
+
 export interface INavbar {
   name: string;
   location: string;
@@ -57,14 +63,7 @@ export interface IRepoState {
   isLoading: boolean,
   preferredTheme: PaletteMode,
   repoInfo: IRepo[],
-  // email: string,
-  // avatar: string,
-  // github: string,
-  // followers: string,
-  // following: string,
-  // location: string,
-  // bio: string,
-  // company: string,
+  pagination: IPagination,
 }
 
 export interface IRepoServices {
