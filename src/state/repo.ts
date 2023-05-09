@@ -24,6 +24,10 @@ const initialState: IRepoState = {
     url: "",
   },
   repoInfo: [],
+  pagination: {
+    currentPage: 1,
+    itemsPerPage: 10,
+  },
   isLoading: false,
   preferredTheme: "dark",
 }
@@ -50,21 +54,21 @@ export const getUser = createAsyncThunk("getUser", async (username?: string) => 
 })
 
 // fetching repo data
-export const getRepo = createAsyncThunk("getRepo", async (username?: string) => {
+export const getRepo = createAsyncThunk("getRepo", async (username = "DSDmar", page = 1, perPage = 10) => {
+  let data = { username, page, perPage }
+
   try {
     if (username) {
-      const res: AxiosResponse = await RepoServices.getRepo(username)
+      const res: AxiosResponse = await RepoServices.getRepo(data)
       return res.data;
     }
     else {
-      let username = "DSDmark";
-      const res: AxiosResponse = await RepoServices.getRepo(username);
+      const res: AxiosResponse = await RepoServices.getRepo(data);
       return res.data;
     }
   } catch (err) {
     console.log(err)
-    let username = "DSDmark";
-    const res: AxiosResponse = await RepoServices.getRepo(username);
+    const res: AxiosResponse = await RepoServices.getRepo(data);
     return res.data;
   }
 })
@@ -75,6 +79,12 @@ export const repoSlice = createSlice({
   reducers: {
     setTheme: (state, action) => {
       state.preferredTheme = action.payload;
+    },
+    setCurrentPage: (state, action) => {
+      state.pagination.currentPage = action.payload;
+    },
+    setItemsPerPage: (state, action) => {
+      state.pagination.itemsPerPage = action.payload;
     }
   },
   extraReducers: (builder) => {
@@ -100,7 +110,7 @@ export const repoSlice = createSlice({
 })
 
 
-export const { setTheme } = repoSlice.actions
+export const { setTheme, setCurrentPage, setItemsPerPage } = repoSlice.actions
 
 export default repoSlice.reducer
 

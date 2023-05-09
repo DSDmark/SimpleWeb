@@ -9,7 +9,8 @@ const Repo = () => {
   const { userInfo: { login } } = useSelector((state: RootState) => state.repo);
 
   const fetchData = useCallback(() => {
-    dispatch(getRepo(login));
+
+    dispatch(getRepo());
   }, [dispatch, getRepo])
 
   useEffect(() => {
