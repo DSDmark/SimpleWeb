@@ -1,3 +1,5 @@
 export { default as MainLayout } from "./layout/"
 export { default as Header } from "./header"
+export { default as Cards } from "./cards/"
+export { default as Pagination } from "./pagination"
 export { default as Footer } from "./footer"

@@ -1,4 +1,4 @@
-import Cards from "@/components/cards"
+import { Cards, Pagination } from "@/components"
 import { AppDispatch, RootState } from "@/state";
 import { getRepo } from "@/state/repo";
 import { useCallback, useEffect } from "react"
@@ -10,7 +10,13 @@ const Repo = () => {
 
   const fetchData = useCallback(() => {
 
-    dispatch(getRepo());
+    let params = {
+      username: login,
+      page: 1,
+      perPage: 5
+    }
+
+    dispatch(getRepo(params));
   }, [dispatch, getRepo])
 
   useEffect(() => {
@@ -18,7 +24,10 @@ const Repo = () => {
   }, [fetchData])
 
   return (
-    <Cards />
+    <>
+      <Cards />
+      <Pagination />
+    </>
   )
 }
 
