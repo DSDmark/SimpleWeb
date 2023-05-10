@@ -17,6 +17,7 @@ const initialState: IRepoState = {
     hireable: false,
     id: 0,
     location: "",
+    public_repos: 0,
     login: "",
     repos_url: "",
     starred_url: "",
@@ -26,7 +27,7 @@ const initialState: IRepoState = {
   repoInfo: [],
   pagination: {
     currentPage: 1,
-    itemsPerPage: 10,
+    itemsPerPage: 6,
   },
   isLoading: false,
   preferredTheme: "dark",
@@ -54,21 +55,29 @@ export const getUser = createAsyncThunk("getUser", async (username?: string) => 
 })
 
 // fetching repo data
-export const getRepo = createAsyncThunk("getRepo", async (username = "DSDmar", page = 1, perPage = 10) => {
-  let data = { username, page, perPage }
+interface IParams {
+  username?: string;
+  page?: number;
+  perPage?: number;
+}
+
+export const getRepo = createAsyncThunk("getRepo", async (params: IParams) => {
+  let { username } = params;
 
   try {
     if (username) {
-      const res: AxiosResponse = await RepoServices.getRepo(data)
+      const res: AxiosResponse = await RepoServices.getRepo(params)
       return res.data;
     }
     else {
-      const res: AxiosResponse = await RepoServices.getRepo(data);
+      params.username = "DSDmark"
+      const res: AxiosResponse = await RepoServices.getRepo(params);
       return res.data;
     }
   } catch (err) {
     console.log(err)
-    const res: AxiosResponse = await RepoServices.getRepo(data);
+    params.username = "DSDmark"
+    const res: AxiosResponse = await RepoServices.getRepo(params);
     return res.data;
   }
 })
