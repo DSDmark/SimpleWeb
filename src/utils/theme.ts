@@ -80,14 +80,6 @@ const createAppTheme = (preferredTheme: PaletteMode) => {
           }
         }
       },
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            color: grey[200],
-            background: shades.secondary[200],
-          }
-        }
-      },
       MuiGrid: {
         styleOverrides: {
           container: {
