@@ -34,11 +34,6 @@
       "@/component": [
         "src/component"
       ]
-    },
-    "references": [
-      {
-        "path": "./tsconfig.node.json"
-      }
-    ]
+    }
   }
 }

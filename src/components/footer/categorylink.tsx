@@ -1,6 +1,4 @@
-import { RootState } from "@/state";
 import { Stack, Link as MuiLink, List, ListItemText, ListItem } from "@mui/material";
-import { useSelector } from "react-redux";
 
 const Categorylink = () => {
   return (
