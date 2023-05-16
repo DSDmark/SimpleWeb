@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import videoBg from "/videos/background.mp4"
 import { Link as RouterLink } from 'react-router-dom';
-import { Avatar, Box, Button, Link as MuiLink, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Avatar, Box, Button, Link as MuiLink, Grid, Typography, useMediaQuery, Stack } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/state';
 import Typewriter from 'typewriter-effect';
@@ -41,7 +41,7 @@ const VideoText = styled(Grid)(({ theme }) => ({
 
 
 const Home = () => {
-  const { isLoading, userInfo: { name, login, avatar_url, bio, hireable, blog } } = useSelector((state: RootState) => state.repo)
+  const { userInfo: { name, login, avatar_url, bio, hireable, blog } } = useSelector((state: RootState) => state.repo)
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("md"));
   return (
     <Box sx={{ position: "relative" }}>
@@ -81,14 +81,16 @@ const Home = () => {
           </Typography>
         </Grid>
         <Grid item width="50%" >
-          <MuiLink component={RouterLink} to={blog}>
-            <Button variant="contained">
-              blog link
+          <Stack spacing={2}>
+            <MuiLink component={RouterLink} to={blog}>
+              <Button variant="contained">
+                blog link
+              </Button>
+            </MuiLink>
+            <Button disabled variant="outlined" sx={{ color: "white" }}>
+              hireable: {hireable ? "✅" : "🔴"}
             </Button>
-          </MuiLink>
-          <Button variant="outlined" sx={{ ml: 6, color: "white" }}>
-            hireable: {hireable ? "✅" : "🔴"}
-          </Button>
+          </Stack>
         </Grid>
       </VideoText>
     </Box>
