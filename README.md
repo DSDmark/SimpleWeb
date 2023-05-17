@@ -6,7 +6,7 @@
 ![GitHub](https://img.shields.io/github/license/DSDmark/SimpleCURD)
 ![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleCURD)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleCURD)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/04d02052-66f1-40c6-bbbf-0baa4066fdcf/deploy-status)](https://app.netlify.com/sites/lucky-figolla-e7f37e/deploys)
+[![Netlify Deploy](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml)
 
 ##  MERN App example with Vitejs, Redux toolkit, Material-ui 🚀 and Nodejs.
 
