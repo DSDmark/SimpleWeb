@@ -72,7 +72,7 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 ## Try Out SimpleCURD Demo 🚀
 
-<a href="https://dsdmark.github.io/SimpleCURD/" alt="SimpleWeb">SimpleCURD</a>
+<a href="https://lucky-figolla-e7f37e.netlify.app/" alt="SimpleWeb">SimpleCURD</a>
 
 </div>
 
