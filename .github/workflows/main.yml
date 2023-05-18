@@ -10,24 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checking the ignore files
-        id : check_ignore_file
-        run: |
-          ignore_file={"READMDE.md" "config.json" "gitignore")
-          modified=false
-          
-          for file in "${ignore_file[@]}"; do
-            if git diff --name-only "${{github.event.before}}" "${{github.evnet.after}}" | grep -q "$file"; then
-             modified=true
-             break
-            fi
-            done
-          echo "::set-output name=modified::$modified
-        
-      - name: Checkout code
-         if:steps.check_ignore_file.outputs.modified != "true"
-        uses: actions/checkout@v3
-
       - name: Install dependencies
         run: npm install
 
