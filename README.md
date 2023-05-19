@@ -2,10 +2,10 @@
 
 # SimpleWeb 💤
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleCURD)
-![GitHub](https://img.shields.io/github/license/DSDmark/SimpleCURD)
-![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleCURD)
-![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleCURD)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleWeb)
+![GitHub](https://img.shields.io/github/license/DSDmark/SimpleWeb)
+![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleWeb)
+![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleWeb)
 [![Netlify Deploy](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml)
 
 ##  MERN App example with Vitejs, Redux toolkit, Material-ui 🚀 and Nodejs.
