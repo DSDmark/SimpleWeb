@@ -14,7 +14,7 @@
 
 ## Purpose 😑
 
-> The **MERN** app serves as an example of how to utilise Build Vitejs App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it employed `Node.js` for its **RESTful APIs**, and `MongoDB` was used to store data. It works with the `Docker` platform.
+> The **MERN** app serves as an example of how to utilise Build Vitejs App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it employed `Node.js` for its **RESTful APIs**. It works with the `Docker` platform.
 
 </div>
 
