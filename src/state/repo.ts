@@ -155,10 +155,10 @@ export const repoSlice = createSlice({
         return { ...state, repoInfo: { ...action.payload, isLoading: true } }
       }),
       builder.addCase(getRepoInfo.pending, (state) => {
-        state.userInfo.isLoading = false;
+        state.repoInfo.isLoading = false;
       }),
       builder.addCase(getRepoInfo.rejected, (state) => {
-        state.userInfo.isLoading = false;
+        state.repoInfo.isLoading = false;
       })
   }
 })
