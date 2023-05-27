@@ -21,11 +21,11 @@ export interface IUser {
   starred_url: string;
   twitter_username: string | null;
   url: string;
+  isLoading: boolean;
 }
 
 export interface IRepo {
-  owner: { avatar_url: string };
-  topics: string[];
+  topics: [];
   language: string;
   url: string;
   downloads_url: string;
@@ -37,33 +37,30 @@ export interface IRepo {
   open_issues_count: number;
   stargazers_count: number;
   default_branch: string;
+  isLoading: boolean;
 }
 
 export interface IPagination {
-  currentPage: number;
-  itemsPerPage: number;
+  currentPage: number,
+  itemsPerPage: number,
+  isLoading: boolean;
 }
-
 
 export interface INavbar {
   name: string;
   location: string;
 }
 
-export interface ISavei {
-  name: string
-  bio: string
-  profile: string
-  repos: string
-  img: string
+export interface IPageData {
+  username: string;
+  page: number;
+  perPage: number;
 }
-
 
 export interface IRepoState {
   userInfo: IUser,
-  isLoading: boolean,
   preferredTheme: PaletteMode,
-  repoInfo: IRepo[],
+  repoInfo: IRepo,
   pagination: IPagination,
 }
 

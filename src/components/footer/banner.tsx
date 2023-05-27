@@ -31,8 +31,29 @@ const FooterImgText = styled(Typography)(({ theme }) => ({
 }))
 
 const MuiImg = styled("img")({
+  position: "relative",
   width: "100%",
-  height: "400px",
+  height: "500px",
+  '&::before &::after': {
+    content: `" "`,
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    height: ' 100%',
+    background: ' linear-gradient(to top, transparent, #ffffff)',
+    transformOrigin: 'bottom left',
+    zIndex: 1,
+  },
+
+  '&:: before': {
+    left: 0,
+    transform: 'skewY(3deg)',
+  },
+  ' &:: after': {
+    right: 0,
+    transform: ' skewY(-3deg)',
+  },
+  clipPath: ' polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)',
 })
 
 const Banner: FC<IData> = ({ data }) => {

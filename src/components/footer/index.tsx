@@ -52,7 +52,7 @@ const FooterLogo: FC<IData> = ({ data }) => {
 }
 
 const Footer: FC = (): ReactElement => {
-  const { userInfo: { name, bio, login, avatar_url, followers, following }, isLoading } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { name, bio, login, avatar_url, followers, following, isLoading } } = useSelector((state: RootState) => state.repo);
   return (
     <Box>
       <Banner data={{ bio, isLoading }} />

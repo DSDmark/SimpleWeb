@@ -1,23 +1,27 @@
 import { Cards, Pagination } from "@/components"
 import { AppDispatch, RootState } from "@/state";
-import { getRepo } from "@/state/repo";
-import { useCallback, useEffect } from "react"
+import { getRepoInfo } from "@/state/repo";
+import { useCallback, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
+interface IPageData {
+  username: string;
+  page: number;
+  perPage: number;
+}
+
 const Repo = () => {
+  const { userInfo: { login, public_repos } } = useSelector((state: RootState) => state.repo);
   const dispatch: AppDispatch = useDispatch();
-  const { userInfo: { login } } = useSelector((state: RootState) => state.repo);
+  const [state, setState] = useState<IPageData>({
+    username: login,
+    page: 1,
+    perPage: 5,
+  });
 
   const fetchData = useCallback(() => {
-
-    let params = {
-      username: login,
-      page: 1,
-      perPage: 5
-    }
-
-    dispatch(getRepo(params));
-  }, [dispatch, getRepo])
+    dispatch(getRepoInfo(state));
+  }, [dispatch, state])
 
   useEffect(() => {
     fetchData();
@@ -26,7 +30,7 @@ const Repo = () => {
   return (
     <>
       <Cards />
-      <Pagination />
+      <Pagination totalEntries={public_repos} setPageData={setState} />
     </>
   )
 }

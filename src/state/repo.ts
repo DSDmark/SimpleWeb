@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
 import { IRepoState } from "../utils";
 import RepoServices from "../services";
+import { IPageData } from "@/utils/interface";
 
 const initialState: IRepoState = {
   userInfo: {
@@ -23,13 +24,28 @@ const initialState: IRepoState = {
     starred_url: "",
     twitter_username: null,
     url: "",
+    isLoading: false,
   },
-  repoInfo: [],
+  repoInfo: {
+    topics: [],
+    language: "",
+    url: "",
+    downloads_url: "",
+    forks_count: 0,
+    html_url: "",
+    id: 0,
+    name: "",
+    description: "",
+    open_issues_count: 0,
+    stargazers_count: 0,
+    default_branch: "",
+    isLoading: false,
+  },
   pagination: {
     currentPage: 1,
     itemsPerPage: 6,
+    isLoading: false,
   },
-  isLoading: false,
   preferredTheme: "dark",
 }
 
@@ -54,30 +70,59 @@ export const getUser = createAsyncThunk("getUser", async (username?: string) => 
   }
 })
 
-// fetching repo data
-interface IParams {
-  username?: string;
-  page?: number;
-  perPage?: number;
-}
-
-export const getRepo = createAsyncThunk("getRepo", async (params: IParams) => {
-  let { username } = params;
-
+export const getRepoInfo = createAsyncThunk("getRepoInfo", async (params: IPageData) => {
+  let res: AxiosResponse;
   try {
-    if (username) {
-      const res: AxiosResponse = await RepoServices.getRepo(params)
+    if (params.username) {
+      res = await RepoServices.getRepo(params)
       return res.data;
-    }
-    else {
-      params.username = "DSDmark"
-      const res: AxiosResponse = await RepoServices.getRepo(params);
+
+    } else {
+      params.username = "DSDmark";
+      res = await RepoServices.getRepo(params)
       return res.data;
     }
   } catch (err) {
-    console.log(err)
     params.username = "DSDmark"
-    const res: AxiosResponse = await RepoServices.getRepo(params);
+    res = await RepoServices.getRepo(params);
+    return res.data;
+  }
+})
+
+export const getFollowerInfo = createAsyncThunk("getFollowerInfo", async (params: IPageData) => {
+  let res: AxiosResponse;
+  try {
+    if (params.username) {
+      res = await RepoServices.getFollowers(params)
+      return res.data;
+
+    } else {
+      params.username = "DSDmark";
+      res = await RepoServices.getFollowers(params)
+      return res.data;
+    }
+  } catch (err) {
+    params.username = "DSDmark"
+    res = await RepoServices.getFollowers(params);
+    return res.data;
+  }
+})
+
+export const getFollowingInfo = createAsyncThunk("getFollowingInfo", async (params: IPageData) => {
+  let res: AxiosResponse;
+  try {
+    if (params.username) {
+      res = await RepoServices.getFollowing(params)
+      return res.data;
+
+    } else {
+      params.username = "DSDmark";
+      res = await RepoServices.getFollowing(params)
+      return res.data;
+    }
+  } catch (err) {
+    params.username = "DSDmark"
+    res = await RepoServices.getFollowing(params);
     return res.data;
   }
 })
@@ -89,37 +134,37 @@ export const repoSlice = createSlice({
     setTheme: (state, action) => {
       state.preferredTheme = action.payload;
     },
-    setCurrentPage: (state, action) => {
-      state.pagination.currentPage = action.payload;
-    },
-    setItemsPerPage: (state, action) => {
-      state.pagination.itemsPerPage = action.payload;
+    setPageValue: (state, action) => {
+      state.pagination.itemsPerPage = action.payload.perPage
+      state.pagination.currentPage = action.payload.page
     }
   },
   extraReducers: (builder) => {
     builder.addCase(getUser.fulfilled, (state, action) => {
-      return { ...state, userInfo: action.payload, isLoading: true }
+      return {
+        ...state, userInfo: { ...action.payload, isLoading: true }
+      }
     }),
       builder.addCase(getUser.pending, (state) => {
-        state.isLoading = false;
+        state.userInfo.isLoading = false;
       }),
       builder.addCase(getUser.rejected, (state) => {
-        state.isLoading = false;
+        state.userInfo.isLoading = false;
       }),
-      builder.addCase(getRepo.fulfilled, (state, action) => {
-        return { ...state, repoInfo: action.payload, isLoading: true }
+      builder.addCase(getRepoInfo.fulfilled, (state, action) => {
+        return { ...state, repoInfo: { ...action.payload, isLoading: true } }
       }),
-      builder.addCase(getRepo.pending, (state) => {
-        state.isLoading = false;
+      builder.addCase(getRepoInfo.pending, (state) => {
+        state.userInfo.isLoading = false;
       }),
-      builder.addCase(getRepo.rejected, (state) => {
-        state.isLoading = false;
+      builder.addCase(getRepoInfo.rejected, (state) => {
+        state.userInfo.isLoading = false;
       })
   }
 })
 
 
-export const { setTheme, setCurrentPage, setItemsPerPage } = repoSlice.actions
+export const { setTheme, setPageValue } = repoSlice.actions
 
 export default repoSlice.reducer
 

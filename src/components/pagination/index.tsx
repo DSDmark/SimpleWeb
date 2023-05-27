@@ -1,15 +1,25 @@
-import { AppDispatch } from "@/state";
-import { RootState } from "@/state";
-import { getRepo, setCurrentPage } from "@/state/repo";
+import { AppDispatch, RootState } from "@/state";
+import { setPageValue } from "@/state/repo";
 import { Pagination as MuiPagination, Stack, Typography } from "@mui/material"
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const Pagination = () => {
-  const { userInfo: { public_repos, login }, pagination: { itemsPerPage, currentPage } } = useSelector((state: RootState) => state.repo)
+interface IPageData {
+  username: string;
+  page: number;
+  perPage: number;
+}
+
+interface IProps {
+  totalEntries: number;
+  setPageData: Dispatch<SetStateAction<IPageData>>,
+}
+
+const Pagination = ({ totalEntries, setPageData }: IProps) => {
   const dispatch: AppDispatch = useDispatch();
+  const { pagination: { currentPage, itemsPerPage }, userInfo: { login } } = useSelector((state: RootState) => state.repo)
   const [page, setPage] = useState<number>(1);
-  let totalPages = Math.ceil(public_repos / itemsPerPage)
+  let totalPages = Math.ceil(totalEntries / itemsPerPage)
 
   //@ts-ignore
   const handlePage = (event, value: number) => {
@@ -17,15 +27,14 @@ const Pagination = () => {
   }
 
   useEffect(() => {
-
     let data = {
       username: login,
-      page,
-      perPage: itemsPerPage,
+      page: page,
+      perPage: 5,
     }
 
-    dispatch(setCurrentPage(page))
-    dispatch(getRepo(data))
+    setPageData((prev: IPageData) => ({ ...prev, page, perPage: 5 }));
+    dispatch(setPageValue(data))
 
   }, [page, dispatch])
 

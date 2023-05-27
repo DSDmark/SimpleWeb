@@ -14,7 +14,7 @@ const FooterStyle = styled(Box)(({ theme }) => ({
 }))
 
 const Copyright = () => {
-  const { isLoading, userInfo: { login } } = useSelector((state: RootState) => state.repo)
+  const { userInfo: { login, isLoading } } = useSelector((state: RootState) => state.repo)
   return (
     <FooterStyle> © {` Copyright ${new Date().getFullYear()}`} by {isLoading ? login : <Skeleton height="40px" width="50px" />}. All Rights Reserved.</FooterStyle>
   )

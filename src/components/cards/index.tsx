@@ -5,14 +5,15 @@ import { useSelector } from "react-redux"
 import { RootState } from "@/state"
 
 const Cards = () => {
-  const { isLoading, repoInfo } = useSelector((state: RootState) => state.repo)
+  const { repoInfo, userInfo: { avatar_url } } = useSelector((state: RootState) => state.repo)
 
   return (
     <Container>
-      {isLoading ? (
+      {repoInfo.isLoading ? (
         <Grid container mt={1} mb={2} alignItems="start" rowSpacing={4} columnSpacing={4}>
-          {repoInfo.map((items) => {
-            const { owner: { avatar_url }, topics, language, url, default_branch, forks_count, html_url, id, name, description, open_issues_count, stargazers_count } = items;
+          {Object.values(repoInfo).map((items) => {
+            const { topics, language, url, default_branch, forks_count, html_url, id, name, description, open_issues_count, stargazers_count } = items;
+            console.log(topics)
             return (
               <Grid item key={id}>
                 <Card component={Paper} elevation={5} sx={{ maxWidth: { md: 350, sm: "auto", xl: 500 } }}>
@@ -26,7 +27,7 @@ const Cards = () => {
                       <Chip label={language} color="success" />
                     </Stack>
                     <Stack rowGap={2} columnGap={2} mt={2} direction="row" flexWrap="wrap">
-                      {topics.map((topic) => (
+                      {topics.map((topic: string) => (
                         <Chip key={window.crypto.randomUUID()} label={topic} color="primary" />
                       ))}
                     </Stack>
@@ -48,7 +49,7 @@ const Cards = () => {
           })}
         </Grid>
 
-      ) : <Skeleton height={400} />}
+      ) : <Skeleton height="50vh" />}
     </Container>
   )
 }
