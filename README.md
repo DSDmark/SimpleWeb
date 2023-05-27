@@ -2,11 +2,11 @@
 
 # SimpleWeb 💤
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleCURD)
-![GitHub](https://img.shields.io/github/license/DSDmark/SimpleCURD)
-![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleCURD)
-![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleCURD)
-[![pages-build-deployment](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/DSDmark/TodoList/actions/workflows/pages/pages-build-deployment)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/SimpleWeb)
+![GitHub](https://img.shields.io/github/license/DSDmark/SimpleWeb)
+![GitHub language count](https://img.shields.io/github/languages/count/DSDmark/SimpleWeb)
+![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleWeb)
+[![Netlify Deploy](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml)
 
 ##  MERN App example with Vitejs, Redux toolkit, Material-ui 🚀 and Nodejs.
 
@@ -72,7 +72,7 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 ## Try Out SimpleCURD Demo 🚀
 
-<a href="https://dsdmark.github.io/SimpleCURD/" alt="SimpleWeb">SimpleCURD</a>
+<a href="https://simplewebs.netlify.app" alt="SimpleWeb">SimpleCURD</a>
 
 </div>
 

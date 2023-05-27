@@ -1,0 +1,29 @@
+name: Netlify Deploy
+
+on:
+  push:
+    branches:
+      - master  # Replace with your branch name if different
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: dist
+          production-branch: master  # Replace with your branch name if different
+          deploy-message: Deploy from GitHub Actions
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
