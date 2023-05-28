@@ -15,7 +15,6 @@ const Followers = () => {
     perPage: 5,
   });
 
-  console.log(state)
   const fetchData = useCallback(() => {
     dispatch(getFollowerInfo(state));
   }, [dispatch, state])

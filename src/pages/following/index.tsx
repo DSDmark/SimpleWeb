@@ -14,8 +14,6 @@ const Following = () => {
     page: 1,
     perPage: 5,
   });
-
-  console.log(state)
   const fetchData = useCallback(() => {
     dispatch(getFollowingInfo(state));
   }, [dispatch, state])
