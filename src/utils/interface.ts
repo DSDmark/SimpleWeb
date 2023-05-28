@@ -25,7 +25,7 @@ export interface IUser {
 }
 
 export interface IRepo {
-  topics: [];
+  topics: string[];
   language: string;
   url: string;
   downloads_url: string;
@@ -44,6 +44,14 @@ export interface IPagination {
   currentPage: number,
   itemsPerPage: number,
   isLoading: boolean;
+}
+
+export interface ISavei {
+  name: string
+  bio: string
+  profile: string
+  repos: string
+  img: string
 }
 
 export interface INavbar {
