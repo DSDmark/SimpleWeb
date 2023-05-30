@@ -65,11 +65,24 @@ export interface IPageData {
   perPage: number;
 }
 
+export interface IFollowing {
+}
+
+export interface IFollowers {
+  id: number;
+  login: string;
+  html_url: string;
+  avatar_url: string;
+  isLoading: boolean;
+}
+
 export interface IRepoState {
   userInfo: IUser,
   preferredTheme: PaletteMode,
   repoInfo: IRepo,
   pagination: IPagination,
+  login_followers: IFollowers,
+  login_following: IFollowing,
 }
 
 export interface IRepoServices {
