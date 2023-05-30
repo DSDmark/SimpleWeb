@@ -18,11 +18,11 @@ class RepoServices implements IRepoServices {
   }
   getFollowers(params: IParams) {
     const { username, page, perPage } = params;
-    return http.get(BASE_URL + username + `/repos?type=owner&sort=stars&direction=asc&page=${page}&per_page=${perPage}`)
+    return http.get(BASE_URL + username + `/followers?type=owner&sort=stars&direction=asc&page=${page}&per_page=${perPage}`)
   }
   getFollowing(params: IParams) {
     const { username, page, perPage } = params;
-    return http.get(BASE_URL + username + `/repos?type=owner&sort=stars&direction=asc&page=${page}&per_page=${perPage}`)
+    return http.get(BASE_URL + username + `/followeing?type=owner&sort=stars&direction=asc&page=${page}&per_page=${perPage}`)
   }
 }
 

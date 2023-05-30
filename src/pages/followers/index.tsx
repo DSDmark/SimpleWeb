@@ -4,6 +4,7 @@ import { getFollowerInfo } from "@/state/repo";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { IPageData } from "@/utils/interface";
+import { DetailCard } from "@/components";
 
 const Followers = () => {
   const { userInfo: { login, followers } } = useSelector((state: RootState) => state.repo);
@@ -25,7 +26,7 @@ const Followers = () => {
 
   return (
     <>
-      <div>Following</div>
+      <DetailCard />
       <Pagination totalEntries={followers} setPageData={setState} />
     </>
   )
