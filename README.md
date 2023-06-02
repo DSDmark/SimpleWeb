@@ -55,7 +55,6 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 ### Here you can quick start with that repo 👼
 
 </div>
-<!-- #default-branch-switch -->
 
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/SimpleWeb/tree/master)
 
