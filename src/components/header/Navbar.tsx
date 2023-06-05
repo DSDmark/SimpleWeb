@@ -10,7 +10,7 @@ import { RootState, AppDispatch } from "@/state";
 const Navbar = () => {
   const [themeMode, setMode] = useState("dark");
   const dispatch: AppDispatch = useDispatch();
-  const { userInfo: { isLoading, name, login, location, avatar_url, url }, preferredTheme } = useSelector((state: RootState) => state.repo)
+  const { userInfo: { isLoading, data: { name, login, location, avatar_url, url } }, preferredTheme } = useSelector((state: RootState) => state.repo)
 
   const handleThemeDispatch = useCallback(() => {
     setMode(prev => prev === "dark" ? "light" : "dark");

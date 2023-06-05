@@ -3,46 +3,52 @@ import { AxiosResponse } from "axios"
 import { PaletteMode } from "@mui/material";
 
 export interface IUser {
-  name: string;
-  avatar_url: string;
-  bio: string;
-  blog: string;
-  public_repos: number;
-  company: string;
-  followers: number;
-  followers_url: string;
-  following: number;
-  following_url: string;
-  hireable: boolean;
-  id: number;
-  location: string;
-  login: string;
-  repos_url: string;
-  starred_url: string;
-  twitter_username: string | null;
-  url: string;
+  data: {
+    name: string;
+    avatar_url: string;
+    bio: string;
+    blog: string;
+    public_repos: number;
+    company: string;
+    followers: number;
+    followers_url: string;
+    following: number;
+    following_url: string;
+    hireable: boolean;
+    id: number;
+    location: string;
+    login: string;
+    repos_url: string;
+    starred_url: string;
+    twitter_username: string | null;
+    url: string;
+  },
   isLoading: boolean;
 }
 
 export interface IRepo {
-  topics: string[];
-  language: string;
-  url: string;
-  downloads_url: string;
-  forks_count: number;
-  html_url: string;
-  id: number;
-  name: string;
-  description: string;
-  open_issues_count: number;
-  stargazers_count: number;
-  default_branch: string;
+  data: {
+    topics: string[];
+    language: string;
+    url: string;
+    downloads_url: string;
+    forks_count: number;
+    html_url: string;
+    id: number;
+    name: string;
+    description: string;
+    open_issues_count: number;
+    stargazers_count: number;
+    default_branch: string;
+  },
   isLoading: boolean;
 }
 
 export interface IPagination {
-  currentPage: number,
-  itemsPerPage: number,
+  data: {
+    currentPage: number,
+    itemsPerPage: number,
+  },
   isLoading: boolean;
 }
 
@@ -69,10 +75,12 @@ export interface IFollowing {
 }
 
 export interface IFollowers {
-  id: number;
-  login: string;
-  html_url: string;
-  avatar_url: string;
+  data: {
+    id: number;
+    login: string;
+    html_url: string;
+    avatar_url: string;
+  },
   isLoading: boolean;
 }
 
@@ -92,4 +100,3 @@ export interface IRepoServices {
 export interface IProps {
   children: ReactNode;
 }
-

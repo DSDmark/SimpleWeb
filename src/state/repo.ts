@@ -6,51 +6,59 @@ import { IPageData } from "@/utils/interface";
 
 const initialState: IRepoState = {
   userInfo: {
-    name: "",
-    avatar_url: "",
-    bio: "",
-    blog: "",
-    company: "",
-    followers: 0,
-    followers_url: "",
-    following: 0,
-    following_url: "",
-    hireable: false,
-    id: 0,
-    location: "",
-    public_repos: 0,
-    login: "",
-    repos_url: "",
-    starred_url: "",
-    twitter_username: null,
-    url: "",
+    data: {
+      name: "",
+      avatar_url: "",
+      bio: "",
+      blog: "",
+      company: "",
+      followers: 0,
+      followers_url: "",
+      following: 0,
+      following_url: "",
+      hireable: false,
+      id: 0,
+      location: "",
+      public_repos: 0,
+      login: "",
+      repos_url: "",
+      starred_url: "",
+      twitter_username: null,
+      url: "",
+    },
     isLoading: false,
   },
   repoInfo: {
-    topics: [],
-    language: "",
-    url: "",
-    downloads_url: "",
-    forks_count: 0,
-    html_url: "",
-    id: 0,
-    name: "",
-    description: "",
-    open_issues_count: 0,
-    stargazers_count: 0,
-    default_branch: "",
+    data: {
+      topics: [],
+      language: "",
+      url: "",
+      downloads_url: "",
+      forks_count: 0,
+      html_url: "",
+      id: 0,
+      name: "",
+      description: "",
+      open_issues_count: 0,
+      stargazers_count: 0,
+      default_branch: "",
+    },
     isLoading: false,
   },
   pagination: {
-    currentPage: 1,
-    itemsPerPage: 6,
+    data: {
+      currentPage: 1,
+      itemsPerPage: 6,
+    },
     isLoading: false,
   },
   login_followers: {
-    id: 0,
-    login: "",
-    html_url: "",
-    avatar_url: "",
+    data: {
+      id: 0,
+      login: "",
+      html_url: "",
+      avatar_url: "",
+    },
     isLoading: false,
   },
   login_following: {},
@@ -143,14 +151,14 @@ export const repoSlice = createSlice({
       state.preferredTheme = action.payload;
     },
     setPageValue: (state, action) => {
-      state.pagination.itemsPerPage = action.payload.perPage
-      state.pagination.currentPage = action.payload.page
+      state.pagination.data.itemsPerPage = action.payload.perPage
+      state.pagination.data.currentPage = action.payload.page
     }
   },
   extraReducers: (builder) => {
     builder.addCase(getUser.fulfilled, (state, action) => {
       return {
-        ...state, userInfo: { ...action.payload, isLoading: true }
+        ...state, userInfo: { data: { ...action.payload }, isLoading: true }
       }
     }),
       builder.addCase(getUser.pending, (state) => {
@@ -160,7 +168,7 @@ export const repoSlice = createSlice({
         state.userInfo.isLoading = false;
       }),
       builder.addCase(getRepoInfo.fulfilled, (state, action) => {
-        return { ...state, repoInfo: { ...action.payload, isLoading: true } }
+        return { ...state, repoInfo: { data: { ...action.payload }, isLoading: true } }
       }),
       builder.addCase(getRepoInfo.pending, (state) => {
         state.repoInfo.isLoading = false;
@@ -169,7 +177,7 @@ export const repoSlice = createSlice({
         state.repoInfo.isLoading = false;
       }),
       builder.addCase(getFollowerInfo.fulfilled, (state, action) => {
-        return { ...state, login_followers: { ...action.payload, isLoading: true } }
+        return { ...state, login_followers: { data: { ...action.payload }, isLoading: true } }
       }),
       builder.addCase(getFollowerInfo.pending, (state) => {
         state.login_followers.isLoading = false;
@@ -179,7 +187,6 @@ export const repoSlice = createSlice({
       })
   }
 })
-
 
 export const { setTheme, setPageValue } = repoSlice.actions
 

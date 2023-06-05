@@ -4,17 +4,17 @@ import { RootState } from "@/state"
 import { useSelector } from "react-redux"
 
 const DetailCard = () => {
-  const login_followers = useSelector((state: RootState) => state.repo.login_followers);
+  const { isLoading, data } = useSelector((state: RootState) => state.repo.login_followers);
 
   return (
     <Container>
-      {login_followers.isLoading ? (
+      {isLoading ? (
         <Grid container mt={1} mb={2} alignItems="start" rowSpacing={4} columnSpacing={4}>
-          {Object.values(login_followers).map((items) => {
+          {Object.values(data).map((items: any) => {
             const { id, html_url, avatar_url, login } = items
             return (
               <Grid item key={id}>
-                <Card component={Paper} elevation={5} sx={{ maxWidth: { md: 350, sm: "auto", xl: 500 } }}>
+                <Card component={Paper} elevation={5} sx={{ width: { md: 350, sm: 200, xl: 500 } }}>
                   <CardHeader avatar={<Avatar src={avatar_url} />} title={login} />
                   <CardMedia component="img" height="194" image={avatar_url} />
                   <CardActions>
@@ -27,7 +27,6 @@ const DetailCard = () => {
             )
           })}
         </Grid>
-
       ) : <Skeleton height="50vh" />}
     </Container>
   )
