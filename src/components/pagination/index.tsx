@@ -17,7 +17,7 @@ interface IProps {
 
 const Pagination = ({ totalEntries, setPageData }: IProps) => {
   const dispatch: AppDispatch = useDispatch();
-  const { pagination: { currentPage, itemsPerPage }, userInfo: { login } } = useSelector((state: RootState) => state.repo)
+  const { pagination: { data: { currentPage, itemsPerPage } }, userInfo: { data: { login } } } = useSelector((state: RootState) => state.repo)
   const [page, setPage] = useState<number>(1);
   let totalPages = Math.ceil(totalEntries / itemsPerPage)
 
@@ -37,7 +37,6 @@ const Pagination = ({ totalEntries, setPageData }: IProps) => {
     dispatch(setPageValue(data))
 
   }, [page, dispatch])
-
 
   return (
     <Stack justifyContent="center" alignItems="center" m={2}>

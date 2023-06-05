@@ -7,7 +7,7 @@ import { IPageData } from "@/utils/interface";
 import { DetailCard } from "@/components";
 
 const Followers = () => {
-  const { userInfo: { login, followers } } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { data: { login, followers } } } = useSelector((state: RootState) => state.repo);
   const dispatch: AppDispatch = useDispatch();
 
   const [state, setState] = useState<IPageData>({

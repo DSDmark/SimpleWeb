@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { IPageData } from "@/utils/interface";
 
 const Following = () => {
-  const { userInfo: { login, following } } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { data: { login, following } } } = useSelector((state: RootState) => state.repo);
   const dispatch: AppDispatch = useDispatch();
 
   const [state, setState] = useState<IPageData>({

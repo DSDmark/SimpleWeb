@@ -11,7 +11,7 @@ interface IPageData {
 }
 
 const Repo = () => {
-  const { userInfo: { login, public_repos } } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { data: { login, public_repos } } } = useSelector((state: RootState) => state.repo);
   const dispatch: AppDispatch = useDispatch();
   const [state, setState] = useState<IPageData>({
     username: login,

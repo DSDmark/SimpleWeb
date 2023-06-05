@@ -41,7 +41,7 @@ const VideoText = styled(Grid)(({ theme }) => ({
 
 
 const Home = () => {
-  const { userInfo: { isLoading, name, login, avatar_url, bio, hireable, blog } } = useSelector((state: RootState) => state.repo)
+  const { userInfo: { isLoading, data: { name, login, avatar_url, bio, hireable, blog } } } = useSelector((state: RootState) => state.repo)
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down("md"));
   return (
     <Box sx={{ position: "relative" }}>
@@ -97,7 +97,6 @@ const Home = () => {
           </>
           : <Skeleton height={500} width="100%" />}
       </VideoText>
-
     </Box>
   )
 }
