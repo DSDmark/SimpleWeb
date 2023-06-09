@@ -72,6 +72,13 @@ export interface IPageData {
 }
 
 export interface IFollowing {
+  data: {
+    id: number;
+    login: string;
+    html_url: string;
+    avatar_url: string;
+  },
+  isLoading: boolean;
 }
 
 export interface IFollowers {

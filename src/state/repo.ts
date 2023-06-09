@@ -61,7 +61,15 @@ const initialState: IRepoState = {
     },
     isLoading: false,
   },
-  login_following: {},
+  login_following: {
+    data: {
+      id: 0,
+      login: "",
+      html_url: "",
+      avatar_url: "",
+    },
+    isLoading: false,
+  },
   preferredTheme: "dark",
 }
 
@@ -184,6 +192,15 @@ export const repoSlice = createSlice({
       }),
       builder.addCase(getFollowerInfo.rejected, (state) => {
         state.login_followers.isLoading = false;
+      }),
+      builder.addCase(getFollowingInfo.fulfilled, (state, action) => {
+        return { ...state, login_following: { data: { ...action.payload }, isLoading: true } }
+      }),
+      builder.addCase(getFollowingInfo.pending, (state) => {
+        state.login_following.isLoading = false;
+      }),
+      builder.addCase(getFollowingInfo.rejected, (state) => {
+        state.login_following.isLoading = false;
       })
   }
 })

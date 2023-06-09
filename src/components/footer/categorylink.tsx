@@ -3,69 +3,25 @@ import { Stack, Link as MuiLink, List, ListItemText, ListItem } from "@mui/mater
 const Categorylink = () => {
   return (
     <Stack direction="row" justifyContent="space-around">
-      <List>
+      <List >
         <ListItem >
           <ListItemText>
-            followers
+            Recently Events
           </ListItemText>
         </ListItem>
         <ListItem >
           <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
+            repo
           </MuiLink>
         </ListItem>
         <ListItem >
           <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
+            pull request
           </MuiLink>
         </ListItem>
         <ListItem >
           <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-      </List>
-      <List>
-        <ListItem >
-          <ListItemText>
-            products
-          </ListItemText>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-      </List>
-      <List>
-        <ListItem >
-          <ListItemText>
-            products
-          </ListItemText>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
-          </MuiLink>
-        </ListItem>
-        <ListItem >
-          <MuiLink variant="subtitle2" href="#" color="text.primary">
-            products
+            author: sudo3@gmail.com
           </MuiLink>
         </ListItem>
       </List>
