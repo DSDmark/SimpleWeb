@@ -1,4 +1,4 @@
-import { Pagination } from "@/components"
+import { DetailCard, Pagination } from "@/components"
 import { AppDispatch, RootState } from "@/state"
 import { getFollowingInfo } from "@/state/repo";
 import { useCallback, useEffect, useState } from "react";
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { IPageData } from "@/utils/interface";
 
 const Following = () => {
-  const { userInfo: { data: { login, following } } } = useSelector((state: RootState) => state.repo);
+  const { userInfo: { data: { login, following } }, login_following } = useSelector((state: RootState) => state.repo);
   const dispatch: AppDispatch = useDispatch();
 
   const [state, setState] = useState<IPageData>({
@@ -24,7 +24,7 @@ const Following = () => {
 
   return (
     <>
-      <div>Following</div>
+      <DetailCard login_data={login_following} />
       <Pagination totalEntries={following} setPageData={setState} />
     </>
   )

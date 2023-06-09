@@ -1,11 +1,10 @@
 import { Container, Paper, Card, CardMedia, CardActions, IconButton, CardHeader, Avatar, Grid, Skeleton } from "@mui/material"
 import { GitHub } from "@mui/icons-material"
-import { RootState } from "@/state"
-import { useSelector } from "react-redux"
 
-const DetailCard = () => {
-  const { isLoading, data } = useSelector((state: RootState) => state.repo.login_followers);
+const DetailCard = ({ login_data }: any) => {
+  const { isLoading, data } = login_data;
 
+  console.log(login_data)
   return (
     <Container>
       {isLoading ? (
