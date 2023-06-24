@@ -8,13 +8,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/SimpleWeb)
 [![Netlify Deploy](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml/badge.svg)](https://github.com/DSDmark/SimpleWeb/actions/workflows/main.yml)
 
-## Apis integration example with Vitets, Redux toolkit, Material-ui 🚀 with github-apis.
+## Apis integration example with Vitets, Redux toolkit, Material-ui 🚀 with GitHub-APIs.
 
 <div align="left">
 
 ## Purpose 😑
 
-> The **SimpleWeb** web app serves as an example of how to Build Vitets App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it employed by **RESTful APIs**. It works with the `Docker` platform.
+> The **SimpleWeb** web app serves as an example of how to Build Vitets App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it is employed by **RESTful APIs** and It works with the `Docker` platform.
 
 </div>
 
@@ -29,20 +29,20 @@ You can utilise that software in two different ways.
 
 #### Frist, here is by using **Nodejs**.
 
-1. Click on green **Clone or download** button and choose Download ZIP.
+1. Click on the green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and **extract it**.
-3. Then install `nodejs` and `NPM` in your local system.
-4. Open the Root Directory, navigate to SimpleCURD using the command `cd SimpleCURD` and use either `npm install` or `pnpm install` to install all dependencies in the frontend and backend directories.
-It used `concurrently:7.6.0` in this project. So, you may use the `npm start` command in root folder, once you have finished installing all dependencies in each folder that contains a `package.json` file. 
+3. Install `nodejs` and `NPM` in your local system.
+4. Open the Root Directory, navigate to SimpleWeb using the command `cd SimpleWeb` and use either `npm install` or `pnpm install` to install all dependencies.
+5. Run `pnpm dev` or `npm start`.
 
 #### Second, here is by using **Docker**.
 
-1. Click on green **Clone or download** button and choose Download ZIP.
+1. Click on the green **Clone or download** button and choose Download ZIP.
 2. Find the downloaded zipped file on your pc and **extract it**.
 3. Then install `Docker` in your local system.
-4. Run that command simply.
+4. Run that command.
 `docker-compose up -d`.
-5. You can now open the **frontend** at `localhost:3000` and the **backend** at `localhost:4000` in your browser.
+5. You can now open the **frontend** at `localhost:3000`.
 
 Once you are done you can close 🔒 the application in your terminal to quit the application.
 
@@ -52,7 +52,7 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 <div align="left">
 
-### Here you can quick start with that repo 👼
+### Here you can quickly start with that repo 👼
 
 </div>
 
