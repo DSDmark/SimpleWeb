@@ -30,7 +30,7 @@ const GetUserName = () => {
   return (
     <Dialog onClose={handleClose} open={open} >
       <DialogTitle>
-        <Box display="flex" color="secoendary.main" justifyContent="center" alignItems="center" flexDirection="column">
+        <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column">
           <GitHub sx={{ mb: 2 }} fontSize="large" />
           Enter your GitHub username
         </Box>
@@ -41,6 +41,7 @@ const GetUserName = () => {
           margin="dense"
           id="username"
           label="GitHub Username"
+          color="warning"
           type="text"
           onChange={handleInput}
           value={userInput}
@@ -49,7 +50,7 @@ const GetUserName = () => {
         />
       </DialogContent>
       <DialogActions>
-        <Button variant="outlined" onClick={handleClose}>
+        <Button variant="outlined" color="warning" onClick={handleClose}>
           Submit
         </Button>
       </DialogActions>
