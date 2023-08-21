@@ -24,8 +24,8 @@
 
 You can utilise that software in two different ways.
 
-- Using **Nodejs**. 
-- Using **Docker**. 
+- Using **Nodejs**.
+- Using **Docker**.
 
 #### Frist, here is by using **Nodejs**.
 
@@ -41,7 +41,7 @@ You can utilise that software in two different ways.
 2. Find the downloaded zipped file on your pc and **extract it**.
 3. Then install `Docker` in your local system.
 4. Run that command.
-`docker-compose up -d`.
+   `docker-compose up -d`.
 5. You can now open the **frontend** at `localhost:3000`.
 
 Once you are done you can close 🔒 the application in your terminal to quit the application.
@@ -68,7 +68,7 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 ### SimpleWeb
 
-![SimpleWeb perview](./assets/perview.gif "SimpleWeb")
+![SimpleWeb perview](./public/assets/perview.gif 'SimpleWeb')
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
